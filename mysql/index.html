@@ -1,0 +1,967 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/mysql/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../os/">
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Mysql - Jerry's site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Jerry&#39;s site" class="md-header__button md-logo" aria-label="Jerry's site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M403 211.7c32.2-24.9 53-63.9 53-107.7 0-75.1-60.9-136-136-136S184 28.9 184 104c0 43.9 20.8 82.9 53 107.7-32.2 16.3-59 41.8-76.8 73.1L112 264.2V224c0-13.3-10.7-24-24-24s-24 10.7-24 24v19.6l-22.5-9.7c-12.2-5.2-26.3.4-31.5 12.6s.4 26.3 12.6 31.5c36.1 15.5 75.9 32.5 119.4 51.2-3.9 14.9-6 30.6-6 46.7 0 70 39.1 130.8 96.6 161.9 7.9 4.3 16.9 6.1 25.9 6.1h123c9 0 18-1.8 25.9-6.1 57.5-31.1 96.6-92 96.6-161.9 0-16.2-2.1-31.8-6-46.7 43.5-18.7 83.4-35.7 119.4-51.2 12.2-5.2 17.8-19.3 12.6-31.5s-19.3-17.8-31.5-12.6l-22.5 9.7V224c0-13.3-10.7-24-24-24s-24 10.7-24 24v40.2l-48.2 20.6c-17.9-31.3-44.6-56.8-76.8-73.1M296 416a24 24 0 1 1 48 0 24 24 0 1 1-48 0m24-120a24 24 0 1 1 0 48 24 24 0 1 1 0-48M248 80a24 24 0 1 1 48 0 24 24 0 1 1-48 0m120-24a24 24 0 1 1 0 48 24 24 0 1 1 0-48m-75.8 103.3c-2.7-4.8-4.2-10.2-4.2-15.7 0-17.5 14.2-31.6 31.6-31.6h.8c17.5 0 31.6 14.2 31.6 31.6 0 5.5-1.4 10.9-4.2 15.7L327 195.8c-3.1 5.4-10.8 5.4-13.9 0l-20.9-36.6z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jerry's site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mysql
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Jerry&#39;s site" class="md-nav__button md-logo" aria-label="Jerry's site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M403 211.7c32.2-24.9 53-63.9 53-107.7 0-75.1-60.9-136-136-136S184 28.9 184 104c0 43.9 20.8 82.9 53 107.7-32.2 16.3-59 41.8-76.8 73.1L112 264.2V224c0-13.3-10.7-24-24-24s-24 10.7-24 24v19.6l-22.5-9.7c-12.2-5.2-26.3.4-31.5 12.6s.4 26.3 12.6 31.5c36.1 15.5 75.9 32.5 119.4 51.2-3.9 14.9-6 30.6-6 46.7 0 70 39.1 130.8 96.6 161.9 7.9 4.3 16.9 6.1 25.9 6.1h123c9 0 18-1.8 25.9-6.1 57.5-31.1 96.6-92 96.6-161.9 0-16.2-2.1-31.8-6-46.7 43.5-18.7 83.4-35.7 119.4-51.2 12.2-5.2 17.8-19.3 12.6-31.5s-19.3-17.8-31.5-12.6l-22.5 9.7V224c0-13.3-10.7-24-24-24s-24 10.7-24 24v40.2l-48.2 20.6c-17.9-31.3-44.6-56.8-76.8-73.1M296 416a24 24 0 1 1 48 0 24 24 0 1 1-48 0m24-120a24 24 0 1 1 0 48 24 24 0 1 1 0-48M248 80a24 24 0 1 1 48 0 24 24 0 1 1-48 0m120-24a24 24 0 1 1 0 48 24 24 0 1 1 0-48m-75.8 103.3c-2.7-4.8-4.2-10.2-4.2-15.7 0-17.5 14.2-31.6 31.6-31.6h.8c17.5 0 31.6 14.2 31.6 31.6 0 5.5-1.4 10.9-4.2 15.7L327 195.8c-3.1 5.4-10.8 5.4-13.9 0l-20.9-36.6z"/></svg>
+
+    </a>
+    Jerry's site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mysql
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Os
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Redis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Mysql</h1>
+
+<h3 id="BRt4X">基础</h3>
+<h4 id="FHkAz">执行流程</h4>
+<p><strong>连接器</strong>校验身份建立连接，<strong>解析器</strong>解析SQL（词法分析-识别关键字、语法分析、构建语法树），执行SQL（预处理阶段-预处理器检查SQL查询语句中的表或字段是否存在，将select * 中的*扩展为表上的所有列、优化阶段-确定SQL查询语句执行方案、执行阶段-执行器执行语句）</p>
+<ul>
+<li>执行一条SQL查询语句，期间发生了什么<ul>
+<li>连接器：建立连接、管理链接、校验身份</li>
+<li>解析器：词法分析、语法分析、构建语法树</li>
+<li>预处理器：检查表/字段是否存在，将select * 中的*扩展为表上的所有列</li>
+<li>优化器：基于查询成本的考虑，选择查询成本最小的执行计划</li>
+<li>执行器调用API接口，从存储引擎读取数据，返回客户端</li>
+</ul>
+</li>
+<li>如何查看MySQL服务被多少个客户端连接<ul>
+<li>show processlist;</li>
+</ul>
+</li>
+<li>空连接会一直被占用吗<ul>
+<li>定义了最大空闲时长，通过wait_timeout参数控制，默认8小时</li>
+<li>通过kill connection +id手动断开</li>
+</ul>
+</li>
+<li>最大连接数由<font style="color:rgb(44, 62, 80);">max_connections控制</font></li>
+<li><font style="color:rgb(44, 62, 80);">怎样解决长连接内存占用问题</font><ul>
+<li><font style="color:rgb(44, 62, 80);">定期断开长连接</font></li>
+<li><font style="color:rgb(44, 62, 80);">客户端主动重置连接。mysql_reset_connection 函数，客户端调用可以重置连接释放内存，不需要重连和重新做权限验证</font></li>
+</ul>
+</li>
+<li><font style="color:rgb(44, 62, 80);">全表扫描过程：执行器第一次查询，调用read_first_record函数指针指向的函数（全扫描的接口），读取第一条记录；执行期判断读到的记录是否满足条件，满足则返回，否则跳过（全扫描是一条一条返回，只不过是等所有都返回了才会显示），执行器查询的过程是一个while循环，所以还会查，调用read_record函数指针指向的函数--全扫描接口，继续读下一条记录，存储引擎把记录取出，返回Server层，执行器继续判断条件，重复上面的过程直至查询完毕。</font></li>
+<li><font style="color:rgb(44, 62, 80);">索引下推：</font>执行过程：<ol>
+<li><font style="color:rgb(44, 62, 80);">存储引擎使用索引找到可能满足条件的索引记录。</font></li>
+<li><font style="color:rgb(44, 62, 80);">在存储引擎层（InnoDB / MyISAM 等），先用下推的条件过滤。</font></li>
+<li><font style="color:rgb(44, 62, 80);">只有通过过滤的行，才会真正回表取数据，再交给 Server 层。</font></li>
+<li><font style="color:rgb(44, 62, 80);">这样能大幅减少回表次数，性能更好。</font></li>
+<li><strong>适用场景</strong>：<ul>
+<li><font style="color:rgb(44, 62, 80);">查询条件中 </font><strong>部分列可以通过索引过滤</strong><font style="color:rgb(44, 62, 80);">，剩余条件需要回表判断。</font></li>
+<li><font style="color:rgb(44, 62, 80);">尤其适用于 </font><strong>联合索引</strong><font style="color:rgb(44, 62, 80);">，前缀条件过滤后，其余条件也能在索引中被下推判断。</font></li>
+</ul>
+</li>
+<li><strong>限制</strong><font style="color:rgb(44, 62, 80);">：      </font><ul>
+<li><font style="color:rgb(44, 62, 80);">仅对二级索引有效（主键索引一般没必要回表）。</font></li>
+<li><font style="color:rgb(44, 62, 80);">并非所有条件都能下推，比如涉及存储引擎不支持的函数/表达式时，仍需回表再判断。</font></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><font style="color:rgb(44, 62, 80);">InnoDB的数据按页为单位来读写，默认每个页大小为16KB；在表中数据量大的时候，为某个索引分配空间的时候就不再按照页为单位分配了，而是按照区为单位分配，每个区大小为1MB，对于16KB的页来说，连续的64个页会被划为一个区，这样就使得链表中相邻的页的物理位置也相邻，就能使用顺序I/O了。</font></li>
+<li><font style="color:rgb(44, 62, 80);">InnoDB行格式</font><ul>
+<li><font style="color:rgb(44, 62, 80);">Redundant，5.0版本之前用的</font></li>
+<li><font style="color:rgb(44, 62, 80);">Compact，5.0之后默认</font></li>
+<li><font style="color:rgb(44, 62, 80);">Dynamic，5.7之后默认</font><img alt="" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756304539517-b1f9a39d-3008-406f-afe5-14bc42806f97.png" /><ul>
+<li>变长字段长度列表信息逆序存放：使得靠前的记录的真实数据和数据对应的长度信息可以同时在一个CPU Cache Line中，提高CPU Cache命中率（指向下一个记录的指针指向的是「记录头信息」和「真实数据」之间的位置）<ul>
+<li>当数据表没有变长字段的时候，表里的行格式就不会有「变长字段长度列表」</li>
+</ul>
+</li>
+<li>NULL值列表的每一位对应一列，为1时表示值为NULL，同样是逆序存放</li>
+<li>记录头信息：<ul>
+<li>delete_mask：标识此条记录是否被删除</li>
+<li>next_record：下一条记录的位置</li>
+<li>record_type：标识当前记录的类型，0普通记录，1B+树非叶子结点记录，2最小记录，3最大记录</li>
+</ul>
+</li>
+<li>trx_id：标识数据由哪个事务生成的，占6字节</li>
+<li>roll_pointer：<font style="color:rgb(44, 62, 80);">记录上一个版本的指针，占7字节</font></li>
+</ul>
+</li>
+<li><font style="color:rgb(44, 62, 80);">Compressed</font></li>
+</ul>
+</li>
+<li><font style="color:rgb(44, 62, 80);">MySQL规定除了TEXT、BLOBs其他所有的列占用的字节长度都不能超过65535字节，要算varchar(n)最大能存储的字节书要看数据库表的字符集，字符集代表着1个字符要占用多少字节</font><ul>
+<li><font style="color:rgb(44, 62, 80);">latin1 1字符1字节，只存英文/西欧语言</font></li>
+<li><font style="color:rgb(44, 62, 80);">utf8 1字符最多占3字节，不能存储4字节的Unicode字符（emoji表情、生僻字）</font></li>
+<li><font style="color:rgb(44, 62, 80);">utf8mb4 最多4字节，可以存储emoji、所有Unicode字符</font></li>
+<li><font style="color:rgb(44, 62, 80);">gbk/gb2312 最多2字节，存储中文时比utf8节省空间，只适合中文</font></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>校对规则：utf8mb4_general_ci（不区分大小写，排序一般）、utf8mb4_unicode_ci（排序更准确但性能稍慢）、utf8mb4_bin（区分大小写，按二进制比较）
+</p>
+</blockquote>
+<ul>
+<li>发生行溢出时，多余的数据会存放到另外的溢出页<img alt="" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756306899168-4f26f035-e9d6-47b9-ad28-f1722d6c73bc.png" /></li>
+</ul>
+<h3 id="l0pjQ"><font style="color:rgb(31, 35, 40);">索引</font></h3>
+<p>索引是<font style="color:rgb(44, 62, 80);">帮助存储引擎快速获取数据的一种数据结构，</font>就是数据的目录</p>
+<h4 id="gYVbc">索引分类</h4>
+<h5 id="Lp5jP">按数据结构分类</h5>
+<p>B+Tree索引、Hash索引、Full-Text索引</p>
+<p><img alt="" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1747407536142-807c2520-c472-413c-bfbe-ad2e3caac911.png" /></p>
+<p>建表时，InnoDB会根据不同场景选择不同的列作为聚簇索引：</p>
+<ol>
+<li>有主键，默认使用主键作为聚簇索引的索引键</li>
+<li>没有主键，选择第一个不含NULL且唯一的列作为聚簇索引的索引键</li>
+<li>都没有的情况下，自动生成自增id列作为聚簇索引的索引键</li>
+<li>为什么MySQL InnoDB选择<strong>B+Tree</strong>作为索引的数据结构？<ul>
+<li>B树非叶子节点也要存储数据，B+Tree单节点数据量更小，相同的磁盘I/O次数下，能查询更多节点，且叶子节点使用双链表，适合常见的基于范围的顺序查找</li>
+<li>相对二叉树来说分支更多，树的高度更小，磁盘的I/O次数更少</li>
+<li>Hash适合等值查询，不适合范围查询</li>
+</ul>
+</li>
+</ol>
+<h5 id="mAGSo">按物理存储分类</h5>
+<p>分为聚簇索引和二级索引</p>
+<h5 id="JwSuW">按字段特性分类</h5>
+<p>主键索引、唯一索引、普通索引、前缀索引（对字符类型字段的前几个字符创建的索引，减少索引空间占用，提升查询效率）</p>
+<h5 id="H6ANX">按字段个数分类</h5>
+<p>单列索引、联合索引（最左匹配原则）</p>
+<blockquote>
+<p>联合索引的最左匹配原则会一直向右匹配到范围查询为止，&gt;和&gt;=略有不同，等号成立则会使得下一个联合索引字段也用到索引。如：between and like "x%"</p>
+<p>建立联合索引要把<strong>区分度大</strong>的字段放前面</p>
+<p>在需要排序的场景时，对查询条件和排序条件使用联合索引进行排序可以提高查询效率，避免在文件排序
+</p>
+</blockquote>
+<ul>
+<li>什么时候需要索引<ul>
+<li>字段有唯一性限制</li>
+<li>经常用于where查询条件</li>
+<li>经常用于group by和order by</li>
+</ul>
+</li>
+<li>什么时候不需要索引<ul>
+<li>where、group by、order by用不到的字段</li>
+<li>字段中存在大量重复数据</li>
+<li>表数据太少</li>
+<li>经常更新的字段（索引也会随之更新，维护麻烦）</li>
+</ul>
+</li>
+<li>有什么优化索引的方法<ul>
+<li>前缀索引优化（减少索引字段大小-适合大字符串的字段作为索引时使用）</li>
+<li>覆盖索引优化（避免回表）</li>
+<li>主键索引最好是递增的（插入时都是追加操作，不会移动数据；否则容易导致页分裂，产生内存碎片）</li>
+<li>防止索引失效（查询时左/左右模糊、对索引列做计算、函数、类型转换操作；联合索引没遵循最左匹配；WHERE字句OR前的条件列是索引列OR后的条件列不是索引列）</li>
+<li>索引最好设置为NOT NULL（存在NULL时，优化器在做索引选择会更加复杂，NULL值没有意义但是占用空间）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>主键字段长度越小，二级索引的叶子节点就越小，二级索引占用的空间就越小
+</p>
+</blockquote>
+<ul>
+<li>explain参数：<ul>
+<li>possible_keys 可能用到的索引</li>
+<li>key 实际用到的索引</li>
+<li>key_len 索引的长度</li>
+<li>rows 扫描的数据行数</li>
+<li>type 扫描类型</li>
+<li>extra<ul>
+<li>Using filesort 当查询语句中包含group by操作且无法利用索引完成排序操作时，不得不选择排序算法进行，可能会通过文件排序</li>
+<li>Using temporary 使用临时表保存中间结果</li>
+<li>Using index 使用覆盖索引</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数据扫描类型<ul>
+<li>All 全表扫描</li>
+<li>index 全索引扫描</li>
+<li>range 索引范围扫描</li>
+<li>ref 非唯一索引扫描</li>
+<li>eq_ref 唯一索引扫描</li>
+<li>const 结果只有一条的主键或唯一索引扫描</li>
+</ul>
+</li>
+<li>InnoDB数据页七个部分<img alt="" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756311939074-552dce94-ea86-4a48-a0b7-e0d1e7e4e6e8.png" /><ul>
+<li>数据页中的记录按照主键顺序组成单向链表（插入删除方便，检索效率不高），数据页中有页目录，起到索引的作用</li>
+<li>页目录由多个槽组成，槽相当于分组记录的索引。通过槽查找记录时可以使用二分法快速定位，然后在槽内遍历。</li>
+<li>InnoDB每个节点都是一个数据页，</li>
+</ul>
+</li>
+<li>单表长度受主键影响，还受行大小影响<img alt="" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756389263410-d91a37d1-9c2c-4fac-b385-6281e07ec6c0.png" /></li>
+<li>InnoDB和MyISAM都支持B+树，但是他们数据的存储结构实现方式不同，InnoDB的B+树索引的叶子结点存储数据本身，MyISAM存储数据的物理地址</li>
+<li>索引失效<ul>
+<li>左/左右模糊匹配（索引B+树按照索引值有序排列存储，只能根据前缀进行匹配）</li>
+<li>对索引使用函数（索引保存的是索引字段原始值，不是经过计算后的值）</li>
+<li>对索引进行表达式计算（原因同上）</li>
+<li>对索引进行隐式类型转换（MySQL在遇到字符串和数字比较的时候会自动把字符串转为数字然后比较，所以定位int 条件str时可以走索引，相反则不行）</li>
+<li>联合索引非最左匹配</li>
+<li>where子句 or前为索引列 or后非索引列</li>
+</ul>
+</li>
+<li>性能比较：count(*)=count(1)&gt;count(主键)&gt;count(字段)<ul>
+<li>count(1):InnoDB循环遍历聚簇索引，将读到的记录返回server层，不会读取记录中的任何字段</li>
+<li>count(主键)则会读取字段，判断是否为NULL</li>
+<li>count(*)相当于count(0)<ul>
+<li>如何优化count(*)：explain 获取rows的近似值；额外表保存计数值</li>
+</ul>
+</li>
+<li>有二级索引优先使用二级索引，二级索引树更小IO成本更低，有多个二级索引时优先使用key_len最小的二级索引</li>
+</ul>
+</li>
+<li>为什么InnoDB要通过遍历来计数<ul>
+<li>MyISAM有meta信息存储row_count值，而InnoDB存储引擎支持事物，由于MVCC的原因，InnoDB表返回多少行是不确定的</li>
+</ul>
+</li>
+<li>mysql分页问题<ul>
+<li>会随着offset变大越来越慢（先扫描生成offset+size行结果集返回server层，然后丢弃前offset行）</li>
+<li>优化：<ul>
+<li>避免直接使用offset，改为使用子查询走主键索引定位起始位置</li>
+<li>覆盖索引+join回表</li>
+<li>缓存热点页</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>深度分页<ul>
+<li>本质痛点是limit offsize, size需要扫描并丢弃，IO随着offset线性增长<ul>
+<li>用上次最后一条的排序键为锚点继续查</li>
+<li>把上页末行的排序键编码成cursor返回客户端，下次查询带回cursor</li>
+<li>固定窗口/时间片分页</li>
+<li>业务层限深+缓存</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="O9CAX">事务</h3>
+<ul>
+<li>事务四大特性：原子性（要么全成功要么全失败 redo log）、一致性（结果一致 undo log）、隔离性（多个事务互相隔离 mvcc）、持久性（修改永久有效）</li>
+<li>并发事务可能出现的问题：脏读（读到修改未提交的数据）、不可重复度（两次读的同一行数据结果不同）、幻读（相同条件查询结果集数量不同）。</li>
+<li>事务隔离级别：读未提交（读最新）、读已提交（每个语句执行前重新生成read view）、可重复度（启动事务时生成read view）、串行化（读写锁）</li>
+<li><img alt="" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756393863721-53f47ad1-2aab-4ecf-b4c5-c1332a7d6402.png" /></li>
+<li><img alt="" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756394221253-60350831-ff91-484c-88e9-63d35a09247f.png" /></li>
+<li>MySQL可重复度隔离级别很大程度上避免了幻读<ul>
+<li>针对快照读（普通select）通过MVCC方式解决幻读</li>
+<li>针对当前读（select for update）通过next-key lock方式解决幻读</li>
+<li>没有避免的例子：<img alt="" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756395010000-63332a26-06ed-4bb6-a8a1-e84b6c4dd60a.png" /></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756395020164-2ec510f7-3578-475f-97f8-1fe0fbd4fd06.png" /></p>
+<h3 id="bNBfy">锁</h3>
+<ul>
+<li>全局锁：用于全库逻辑备份，容易造成业务停滞（如果数据库的引擎支持的事务支持可重复读的隔离级别，那么在备份数据库之前开启事务，由于MVCC支持，备份期间依然可以对数据进行操作）</li>
+<li>表级锁<ul>
+<li>表锁</li>
+<li>元数据锁MDL，不需要显式使用，当我们对数据库表进行操作时，会自动加上MDL（事务提交后释放）<ul>
+<li>CRUD时加MDL读锁</li>
+<li>变更表结构加MDL写锁</li>
+<li>申请MDL锁的操作会形成一个队列，写锁获取优先级高于读锁</li>
+</ul>
+</li>
+<li>意向锁：不会和行级锁发生冲突，意向锁之间也不会发生冲突，只会和共享表锁、独占表锁发生冲突（快速判断表里是否有记录被加锁）</li>
+<li>AUTO INC锁：执行完插入语句后立即释放。<ul>
+<li><font style="color:rgb(44, 62, 80);">innodb_autoinc_lock_mode=0，采用AUTO INC锁，语句执行结束后释放锁</font></li>
+<li><font style="color:rgb(44, 62, 80);">innodb_autoinc_lock_mode=2，采用轻量锁，申请自增主键后就释放锁，不需要等待语句执行后才释放（搭配binlog的日志格式为statement一起使用会在主从复置场景中发生数据不一致的问题，需要设置成row）</font></li>
+<li><font style="color:rgb(44, 62, 80);">innodb_autoinc_lock_mode=1</font><ul>
+<li><font style="color:rgb(44, 62, 80);">普通insert语句，申请后马上释放</font></li>
+<li><font style="color:rgb(44, 62, 80);">insert select 批量插入，语句结束后释放</font></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><font style="color:rgb(44, 62, 80);">行级锁（select lock in share mode/select for update）</font><ul>
+<li><font style="color:rgb(44, 62, 80);">record lock</font></li>
+<li><font style="color:rgb(44, 62, 80);">gap lock 间隙锁之间是兼容的，两个事务可以同时持有包含共同范围的间隙锁，加锁的目的本就是防止插入幻影记录（间隙锁会和插入意向锁冲突，插入意向锁是行级锁）</font></li>
+<li><font style="color:rgb(44, 62, 80);">next-key lock</font></li>
+<li><font style="color:rgb(44, 62, 80);">插入意向锁（特殊的间隙锁）</font></li>
+</ul>
+</li>
+<li><font style="color:rgb(44, 62, 80);">MySQL怎么加锁（select * from performance_schema.data_locks\G;查看加了什么锁）</font><ul>
+<li><font style="color:rgb(44, 62, 80);">唯一索引等值查询：存在-记录锁（主键唯一且存在，不能再插入，对唯一索引加了记录锁所以不能删除这条记录，因此避免了幻读）；不存在-间隙锁（右边界开区间，右边的记录可以被修改）</font></li>
+<li><font style="color:rgb(44, 62, 80);">唯一索引范围查询</font><ul>
+<li><font style="color:rgb(44, 62, 80);">大于等于 next-key+记录锁</font></li>
+<li><font style="color:rgb(44, 62, 80);">小于/小于等于</font><ul>
+<li><font style="color:rgb(44, 62, 80);">条件值不在表中：next-key+间隙锁</font></li>
+<li><font style="color:rgb(44, 62, 80);">在表中</font><ul>
+<li><font style="color:rgb(44, 62, 80);">小于：next-key+间隙锁</font></li>
+<li><font style="color:rgb(44, 62, 80);">小于等于：全是next-key</font></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>如果锁定读查询语句没走索引，就会全表扫描，每条记录都会加next-key锁，相当于锁全表</p>
+<p>sql_safe_updates设置为1时，必须满足以下条件之一才能执行成功：</p>
+<ul>
+<li>使用where，where条件中必须有索引列</li>
+<li>使用limit</li>
+<li>同时使用where和limit，where条件可以没有索引列</li>
+</ul>
+<p>delete语句必须满足以下条件才能执行成功：</p>
+<ul>
+<li>同时使用where和limit，where条件可以没有索引列
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>insert加锁逻辑<ul>
+<li>插入前<ul>
+<li>根据主键和唯一索引检查是否有冲突</li>
+<li>定位插入位置时看目标间隙是否被其他事务间隙锁/next-key占着</li>
+<li>申请插入意向锁</li>
+</ul>
+</li>
+<li>插入成功后<ul>
+<li>给插入记录加上行级X锁，事务提交前其他事务不能修改/删除这一行，事务提交后释放锁</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如何避免死锁（互斥、占有等待、不可强占、循环等待）<ul>
+<li>设置事务等待锁的超时时间</li>
+<li>开启主动死锁检测 innodb_deadlock_detect</li>
+</ul>
+</li>
+</ul>
+<h3 id="VlKFl">日志</h3>
+<ul>
+<li>三种日志<ul>
+<li>undo log 回滚日志 实现原子性，用于事务回滚和MVCC（通过readview和undo log实现）（存储引擎层生成的日志）--记录执行事务前的数据</li>
+<li>redo log 实现持久性，用于掉电等故障恢复（存储引擎层生成的日志）记录了某个数据页做了什么修改</li>
+<li>binlog 用于数据备份和主从复制（server层生成的日志）</li>
+</ul>
+</li>
+<li>delete操作是将对象打上delete tag标记删除，最终由purge线程完成删除</li>
+<li>update<ul>
+<li>如果不是主键列，在undo log中直接反向记录是如何update的</li>
+<li>如果是主键列，update分两步执行，先删除再插入</li>
+</ul>
+</li>
+<li>WAL技术：写操作并不是立刻写盘而是先写日志，在合适的时间再写盘（随机写变成了顺序写）</li>
+<li>内存修改Undo页面也需要记录对应的redo log，因为undo log也要实现持久性的保护</li>
+<li>写入redo log的方式是追加操作，是顺序写；写入磁盘是随机写</li>
+<li>为什么需要redo log<ul>
+<li>随机写变顺序写</li>
+<li>实现事务的持久性，让MySQL有crash-safe的能力</li>
+</ul>
+</li>
+<li>redo log刷盘时机<ul>
+<li>MySQL正常关闭时</li>
+<li>redo log buffer写入量大于redo log buffer内存空间一半时</li>
+<li>InnoDB的后台线程每隔一秒刷盘</li>
+<li>事务提交（可由innodb_flush_log_at_trx_commit参数控制）<ul>
+<li>innodb_flush_log_at_trx_commit=0:事务提交时只写redo log buffer，不刷盘，不写redo log文件（每隔一秒调用write()写到redo log文件,再使用fsync()刷盘）</li>
+<li>innodb_flush_log_at_trx_commit=1:每次事务提交都会刷盘，且写入redo log文件</li>
+<li>innodb_flush_log_at_trx_commit=2:每次事务提交会把redo log只写到redo log文件但不刷盘</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>redo log循环写，write pos追上checkpoint会阻塞，将buffer pool中的脏页刷盘，然后标记redo log哪些可以擦除，接着对旧记录进行擦除，腾出空间，checkout往后移动</li>
+<li>binlog文件记录了所有数据库表结构变更和表数据修改</li>
+<li>redo log和binlog区别<ul>
+<li>适用对象不同<ul>
+<li>binlog时server层实现的日志，所有存储引擎都可以用</li>
+<li>redo log是InnoDB存储引擎实现的日志</li>
+</ul>
+</li>
+<li>文件格式不同<ul>
+<li>binlog有三种格式：statement（记录执行的语句）、row（记录行数据最终被修改成什么样）、mixed（包含前面两种）</li>
+<li>redo log是物理日志，记录的是在某个数据页做了什么修改</li>
+</ul>
+</li>
+<li>写入方式不同<ul>
+<li>binlog是追加写，保存的是全量日志</li>
+<li>redo log是循环写</li>
+</ul>
+</li>
+<li>用途不同<ul>
+<li>binlog用于备份恢复、主从复制</li>
+<li>redo log用于掉电等事故</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>主从复制3个阶段<ul>
+<li>写入binlog：主库写binlog，提交事务，更新本地存储数据</li>
+<li>同步binlog：把binlog复制到所有从库，每个从库把binlog写到暂存日志中</li>
+<li>回放binlog：回放binlog，更新存储引擎中的数据</li>
+</ul>
+</li>
+<li>主从复制过程<ul>
+<li>主库收到提交事务的请求后，先写入binlog，再提交事务，更新存储引擎中的数据，事务提交完成后返回给客户端操作成功的响应</li>
+<li>从库会创建一个专门的IO线程，连接主库的log dump线程，接收主库的binlog日志，再把binlog写入relay log的中继日志，再返回给主库复制成功的响应</li>
+<li>从库会创建一个用于回放binlog的线程去读relay log中继日志，然后回放binlog更新存储引擎中的数据，最终实现主从的数据一致性</li>
+</ul>
+</li>
+<li>从库是不是越多越好<ul>
+<li>主库数量增加，从库连接上来的IO线程就会增多，主库要创建同样多的log dump线程来处理复制的请求，对主库资源消耗比较高，同时还受限于主库的网络带宽</li>
+</ul>
+</li>
+<li>主从复制模型<ul>
+<li>同步复制：主库提交事务的线程要等待所有从库的复制成功响应才返回客户端。性能差、可用性差</li>
+<li>异步复制（默认）</li>
+<li>半同步复制：等待一部分复制成功响应回来就行，兼顾了异步复制和同步复制的优点，及时出现主库宕机，至少还有一个从库有最新的数据，不存在数据丢失的风险</li>
+</ul>
+</li>
+<li><img alt="" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756536745298-5f05752a-ba96-4340-819c-204c12319de3.png" /></li>
+<li>write指的是把日志写入binlog文件，但是没有持久化到磁盘，write写入速度快，不涉及IO</li>
+<li>fsync把数据持久化到磁盘，涉及IO，通过sync_binlog参数控制刷盘频率<ul>
+<li>sync_binlog=0:每次提交事务都只write不fsync</li>
+<li>sync_binlog=1:每次事务提交都会write和fsync</li>
+<li>sync_binlog=N，每次提交事务都write，累计N个事务才fsync</li>
+</ul>
+</li>
+<li>update执行流程</li>
+<li>执行期调用存储引擎接口，通过索引获取记录<ol>
+<li>如果数据页在buffer pool，直接返回给执行器更新</li>
+<li>如果不在buffer pool就从磁盘读入，然后返回给执行器</li>
+</ol>
+</li>
+<li>执行期得到记录后，观察更新前和更新后记录是否一样<ol>
+<li>一样的话就不进行更新</li>
+<li>不一样的话就把更新前记录和更新后记录返回给InnoDB</li>
+</ol>
+</li>
+<li>开启事务，InnoDB更新记录前要先记录对应的undo log，undo log写入buffer pool中的undo页面，修改undo页面后，记录对应的redo log</li>
+<li>InnoDB开始更新记录，先更新内存，然后将记录写到redo log。为了减少磁盘IO，不会立即将脏页写入磁盘，后续由后台线程选择一个合适的时机将脏页写入磁盘（WAL技术）。</li>
+<li>在一条更新语句执行完成后开始记录对应的binlog，此时binlog会被保存到binlog cache，在事务提交时才会将binlog刷盘</li>
+<li>事务提交，两阶段提交</li>
+<li>两阶段提交<ul>
+<li>如果在redo log刷盘后，MySQL宕机，binlog没来得及写入：MySQl重启后通过redo log能恢复到新值，但是binlog没有记录，在主从架构中，binlog会被复制到从库，所以从库无法更新到新值</li>
+<li>如果binlog刷盘后，MySQL宕机，redo log没来得及写入：主库无新值，从库有新值</li>
+<li>两阶段提交把事务提交拆分成了2个阶段：准备阶段和提交阶段<ul>
+<li>prepare阶段：将XID（内部事务ID）写入redo log，同时将redo log对应的事务状态设置为prepare，然后将redo log刷盘</li>
+<li>commit阶段：把XID写入到binlog，然后将binlog刷盘，调用提交事务的接口，将redo log的状态设置为commit</li>
+</ul>
+</li>
+<li>binlog中没有XID，说明redo log刷盘但是binlog没有刷盘，回滚事务</li>
+<li>binlog有事XID说明redo log和binlog都刷盘，提交事务</li>
+<li>两阶段提交是以binlog写成功为事务提交成功的标识</li>
+<li>两阶段提交问题：<ul>
+<li>磁盘IO次数高</li>
+<li>锁竞争激烈</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>组提交<ul>
+<li>binlog组提交机制：当有多个事务提交的时候，会将多个binlog刷盘操作合并成一个，从而减少IO的次数<ul>
+<li>引入组提交后，commit阶段拆分为三个过程（每个阶段都有一个队列，锁的粒度小了，多阶段可以并发执行）<ul>
+<li>flush阶段：多个事务按进入的顺序将binlog从cache写入文件</li>
+<li>sync阶段：对binlog文件做fsync操作</li>
+<li>commit阶段：多个事务按照顺序做InnoDB commit操作</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MySQl磁盘IO高，有什么优化方法<ul>
+<li>设置组提交参数binlog_group_commit_sync_delay和binlog_group_commit_sync_no_delay_count，延迟刷盘时机</li>
+<li>sync_binlog设置为大于1的数</li>
+<li>innodb_flush_log_at_trx_commit设置为2</li>
+</ul>
+</li>
+</ul>
+<h3 id="YNSdx">内存</h3>
+<ul>
+<li>如何管理空闲页<ul>
+<li>free链表</li>
+</ul>
+</li>
+<li>如何管理脏页<ul>
+<li>flush链表</li>
+</ul>
+</li>
+<li>如何提高缓存命中率<ul>
+<li>LRU 最近最少使用<ul>
+<li>预读失败问题<ul>
+<li>让预读的页停留在buffer pool里的时间尽可能短，真正被访问的页才移动到LRU链表头部--odl+young区域：预读页放入old头部，真正被访问时才插入young头部</li>
+</ul>
+</li>
+<li>buffer pool污染<ul>
+<li>停留在old区域的时间判断<ul>
+<li>如果后续访问时间与第一次访问的时间在某个时间间隔内，该缓存也不会被放入young头部</li>
+<li>否则，放入young头部</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>脏页刷新时机<ul>
+<li>redo log 满了</li>
+<li>buffer pool不足，需要将一部分数据页淘汰</li>
+<li>MySQL认为空闲时，后台线程会定期将适量的脏页刷盘</li>
+<li>MySQl正常关闭时</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Welcome to MkDocs">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Welcome to MkDocs
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../os/" class="md-footer__link md-footer__link--next" aria-label="Next: Os">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Os
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

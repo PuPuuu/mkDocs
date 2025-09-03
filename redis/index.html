@@ -1,0 +1,2006 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/redis/">
+      
+      
+        <link rel="prev" href="../os/">
+      
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Redis - Jerry's site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Jerry&#39;s site" class="md-header__button md-logo" aria-label="Jerry's site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M403 211.7c32.2-24.9 53-63.9 53-107.7 0-75.1-60.9-136-136-136S184 28.9 184 104c0 43.9 20.8 82.9 53 107.7-32.2 16.3-59 41.8-76.8 73.1L112 264.2V224c0-13.3-10.7-24-24-24s-24 10.7-24 24v19.6l-22.5-9.7c-12.2-5.2-26.3.4-31.5 12.6s.4 26.3 12.6 31.5c36.1 15.5 75.9 32.5 119.4 51.2-3.9 14.9-6 30.6-6 46.7 0 70 39.1 130.8 96.6 161.9 7.9 4.3 16.9 6.1 25.9 6.1h123c9 0 18-1.8 25.9-6.1 57.5-31.1 96.6-92 96.6-161.9 0-16.2-2.1-31.8-6-46.7 43.5-18.7 83.4-35.7 119.4-51.2 12.2-5.2 17.8-19.3 12.6-31.5s-19.3-17.8-31.5-12.6l-22.5 9.7V224c0-13.3-10.7-24-24-24s-24 10.7-24 24v40.2l-48.2 20.6c-17.9-31.3-44.6-56.8-76.8-73.1M296 416a24 24 0 1 1 48 0 24 24 0 1 1-48 0m24-120a24 24 0 1 1 0 48 24 24 0 1 1 0-48M248 80a24 24 0 1 1 48 0 24 24 0 1 1-48 0m120-24a24 24 0 1 1 0 48 24 24 0 1 1 0-48m-75.8 103.3c-2.7-4.8-4.2-10.2-4.2-15.7 0-17.5 14.2-31.6 31.6-31.6h.8c17.5 0 31.6 14.2 31.6 31.6 0 5.5-1.4 10.9-4.2 15.7L327 195.8c-3.1 5.4-10.8 5.4-13.9 0l-20.9-36.6z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jerry's site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Redis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Jerry&#39;s site" class="md-nav__button md-logo" aria-label="Jerry's site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M403 211.7c32.2-24.9 53-63.9 53-107.7 0-75.1-60.9-136-136-136S184 28.9 184 104c0 43.9 20.8 82.9 53 107.7-32.2 16.3-59 41.8-76.8 73.1L112 264.2V224c0-13.3-10.7-24-24-24s-24 10.7-24 24v19.6l-22.5-9.7c-12.2-5.2-26.3.4-31.5 12.6s.4 26.3 12.6 31.5c36.1 15.5 75.9 32.5 119.4 51.2-3.9 14.9-6 30.6-6 46.7 0 70 39.1 130.8 96.6 161.9 7.9 4.3 16.9 6.1 25.9 6.1h123c9 0 18-1.8 25.9-6.1 57.5-31.1 96.6-92 96.6-161.9 0-16.2-2.1-31.8-6-46.7 43.5-18.7 83.4-35.7 119.4-51.2 12.2-5.2 17.8-19.3 12.6-31.5s-19.3-17.8-31.5-12.6l-22.5 9.7V224c0-13.3-10.7-24-24-24s-24 10.7-24 24v40.2l-48.2 20.6c-17.9-31.3-44.6-56.8-76.8-73.1M296 416a24 24 0 1 1 48 0 24 24 0 1 1-48 0m24-120a24 24 0 1 1 0 48 24 24 0 1 1 0-48M248 80a24 24 0 1 1 48 0 24 24 0 1 1-48 0m120-24a24 24 0 1 1 0 48 24 24 0 1 1 0-48m-75.8 103.3c-2.7-4.8-4.2-10.2-4.2-15.7 0-17.5 14.2-31.6 31.6-31.6h.8c17.5 0 31.6 14.2 31.6 31.6 0 5.5-1.4 10.9-4.2 15.7L327 195.8c-3.1 5.4-10.8 5.4-13.9 0l-20.9-36.6z"/></svg>
+
+    </a>
+    Jerry's site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mysql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mysql
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Os
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Redis
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Redis
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据类型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    <span class="md-ellipsis">
+      String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      List
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zset" class="md-nav__link">
+    <span class="md-ellipsis">
+      ZSet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      BitMap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyperloglog" class="md-nav__link">
+    <span class="md-ellipsis">
+      HyperLogLog
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geo" class="md-nav__link">
+    <span class="md-ellipsis">
+      GEO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stream
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      持久化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="持久化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aof-append-only-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      AOF Append Only File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aof" class="md-nav__link">
+    <span class="md-ellipsis">
+      AOF重写机制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aof_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      AOF后台重写
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      RDB快照
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aofrdb-aof-use-rdb-preamble-yes" class="md-nav__link">
+    <span class="md-ellipsis">
+      混合使用AOF日志和RDB快照 （aof-use-rdb-preamble yes）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      策略
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      过期删除策略
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存淘汰策略
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      高可用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高可用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      主从复制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="主从复制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一次同步
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      命令传播
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      分摊主服务器的压力
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      增量复制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      哨兵
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="哨兵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      监控
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      选主
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="选主">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      主从故障转移过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      哨兵集群组成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redis Cluster集群
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redis Cluster集群">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gossip" class="md-nav__link">
+    <span class="md-ellipsis">
+      节点间通信 Gossip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      故障转移
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="缓存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存雪崩
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存击穿
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存穿透
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据库和缓存一致性问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据库和缓存一致性问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cache-aside" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Aside 旁路缓存策略
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据类型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    <span class="md-ellipsis">
+      String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      List
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zset" class="md-nav__link">
+    <span class="md-ellipsis">
+      ZSet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      BitMap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyperloglog" class="md-nav__link">
+    <span class="md-ellipsis">
+      HyperLogLog
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geo" class="md-nav__link">
+    <span class="md-ellipsis">
+      GEO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stream
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      持久化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="持久化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aof-append-only-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      AOF Append Only File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aof" class="md-nav__link">
+    <span class="md-ellipsis">
+      AOF重写机制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aof_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      AOF后台重写
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      RDB快照
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aofrdb-aof-use-rdb-preamble-yes" class="md-nav__link">
+    <span class="md-ellipsis">
+      混合使用AOF日志和RDB快照 （aof-use-rdb-preamble yes）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      策略
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      过期删除策略
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存淘汰策略
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      高可用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高可用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      主从复制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="主从复制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一次同步
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      命令传播
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      分摊主服务器的压力
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      增量复制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      哨兵
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="哨兵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      监控
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      选主
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="选主">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      主从故障转移过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      哨兵集群组成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redis Cluster集群
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redis Cluster集群">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gossip" class="md-nav__link">
+    <span class="md-ellipsis">
+      节点间通信 Gossip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      故障转移
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="缓存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存雪崩
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存击穿
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存穿透
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据库和缓存一致性问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据库和缓存一致性问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cache-aside" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Aside 旁路缓存策略
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Redis</h1>
+
+<h2 id="_1">数据类型</h2>
+<p>常见物种：String，Hash，List，Set，ZSet</p>
+<p>后续又支持：BitMap、HyperLogLog、GEO、Stream</p>
+<h3 id="string">String</h3>
+<p>value不仅可以是字符串也可以是数字，value最多可以容纳的数据长度是512M。</p>
+<p><strong>底层实现：</strong>int和SDS（简单动态字符串）</p>
+<p>字符串对象的内部编码有三种：int、raw、embstr</p>
+<ul>
+<li>字符串对象为整数值且能用long类型表示：int</li>
+<li>字符串对象为字符串且长度小于等于32字节（短字符）：embstr</li>
+<li>长字符：raw</li>
+</ul>
+<p><strong>常见命令</strong>：</p>
+<div class="highlight"><pre><span></span><code><span class="n">SET</span> <span class="n">key</span> <span class="n">value</span>
+<span class="n">GET</span> <span class="n">key</span>
+<span class="n">EXISTS</span> <span class="n">key</span>
+<span class="n">STRLEN</span> <span class="n">key</span>
+<span class="n">DEL</span> <span class="n">key</span>
+<span class="n">MSET</span> <span class="n">key1</span> <span class="n">value1</span> <span class="n">key2</span> <span class="n">value2</span>
+<span class="n">MGET</span> <span class="n">key1</span> <span class="n">key2</span>
+<span class="n">SET</span> <span class="n">number</span> <span class="mi">0</span>
+<span class="n">INCR</span> <span class="n">number</span> <span class="c1"># 加一</span>
+<span class="n">INCRBY</span> <span class="n">number</span> <span class="mi">10</span> <span class="c1"># 加十</span>
+<span class="n">DECR</span> <span class="n">number</span> <span class="c1"># 减一</span>
+<span class="n">DECRBY</span> <span class="n">number</span> <span class="mi">10</span> <span class="c1"># 减十</span>
+<span class="n">EXPIRE</span> <span class="n">name</span> <span class="mi">60</span> <span class="c1"># 设置过期时间60s</span>
+<span class="n">TTL</span> <span class="n">name</span> <span class="c1"># 查看还有多久过期</span>
+<span class="n">SET</span> <span class="n">key</span> <span class="n">value</span> <span class="n">EX</span> <span class="mi">60</span> <span class="c1">#设置键时设置过期时间</span>
+<span class="n">SETEX</span> <span class="n">key</span> <span class="mi">60</span> <span class="n">value</span> <span class="c1"># 等效写法</span>
+<span class="n">SETNX</span> <span class="n">key</span> <span class="n">value</span> <span class="c1"># 不存在则插入</span>
+</code></pre></div>
+<p><strong>应用场景：</strong></p>
+<ul>
+<li>缓存对象</li>
+<li>常规计数（计算访问次数、点赞转发、库存数量）</li>
+<li>分布式锁：set nx参数可以实现key不存在才插入：set key unique_value nx px 10000（PX单位是毫秒，EX单位是秒）</li>
+<li>
+<p>共享Session信息：多服务器情境下将Session信息集中存放在Redis</p>
+</li>
+<li>
+<p>SDS不仅可以保存文本数据，还可以保存二进制数据（图片、音视频、压缩文件）</p>
+</li>
+<li>SDS获取字符串长度的时间复杂度是O(1)：维护<code>len</code>属性</li>
+<li>Redis的SDS API是安全的，拼接字符串不会造成缓冲区溢出：拼接前会检查空间是否满足要求，空间不够会自动扩容</li>
+<li>
+<p>embstr优势与缺点（与raw相比）</p>
+</li>
+<li>
+<p>创建对象内存分配次数2次降为1次；释放对象也调用一次内存释放函数；所有数据保存在连续的内存，更好的利用CPU缓存</p>
+</li>
+<li>
+<p>字符串长度增加需要重新分配内存时，整个对象和sds都要重新分配空间（因此embstr字符串对象实际上是只读的）</p>
+</li>
+<li>
+<p>分布式锁解锁的过程就是将key删除，要保证操作的客户端是加锁客户端（unique_value），通过lua脚本保证解锁的原子性</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">redis</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="n">KEYS</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="n">ARGV</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">then</span>
+    <span class="k">return</span> <span class="n">redis</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;del&quot;</span><span class="p">,</span> <span class="n">KEYS</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">else</span>
+    <span class="k">return</span> <span class="mi">0</span>
+<span class="n">end</span>
+</code></pre></div>
+<p><img alt="img" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756548937449-c8a4ad9a-bf7c-4aad-b297-0306a6b092ce.png" /><img alt="img" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756548953777-890a5032-661c-4cd4-9dbd-810be1556684.png" /><img alt="img" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756548962257-b33689b2-b778-40df-9c38-398fe127bf8e.png" /></p>
+<h3 id="list">List</h3>
+<p>字符串列表，按照插入顺序排序，可以从头部/尾部插入，最大长度2^32-1</p>
+<p><strong>内部实现</strong>：quicklist（链表+数组的实现形式，每个节点是一个ziplist（数组），结点之间是双向链表）</p>
+<p><strong>常用命令</strong>：</p>
+<div class="highlight"><pre><span></span><code><span class="n">LPUSH</span><span class="o">/</span><span class="n">RPUSH</span> <span class="n">key</span> <span class="n">value</span> <span class="p">[</span><span class="n">value</span> <span class="o">...</span><span class="p">]</span> <span class="c1">#从表头/表尾插入一个/多个元素</span>
+<span class="n">LPOP</span><span class="o">/</span><span class="n">RPOP</span> <span class="n">key</span> <span class="c1"># 移除表头/表尾元素</span>
+<span class="n">LRANGE</span> <span class="n">key</span> <span class="n">start</span> <span class="n">stop</span> <span class="c1"># 返回指定区间元素</span>
+<span class="n">BLPOP</span><span class="o">/</span><span class="n">BRPOP</span> <span class="n">key</span> <span class="n">timeout</span> <span class="c1"># 从key列表表头/表尾弹出元素，没有就阻塞timeout秒，如果timeout是0则一直阻塞</span>
+</code></pre></div>
+<p><strong>应用场景</strong>：</p>
+<ul>
+<li>
+<p>消息队列（必须满足消息保序、处理重复的消息、保证消息可靠性）</p>
+</li>
+<li>
+<p>LPUSH+RPOP或RPUSH+LPOP（BRPOP在没有数据时会阻塞等待，节省CPU开销）--保序</p>
+</li>
+<li>给消息加上全局ID --防止处理重复消息</li>
+<li>BRPOPLPUSH：让消费者程序从一个List中读取消息的同时，把这个消息再插入另一个List留存 --保证消息可靠性</li>
+<li>
+<p>缺陷：</p>
+</li>
+<li>
+<p>不支持多个消费者消费同一条消息（不支持消费组的实现）</p>
+</li>
+</ul>
+<h3 id="hash">Hash</h3>
+<p>键值对集合，适合存储对象。</p>
+<p><strong>内部实现</strong>：</p>
+<ul>
+<li>哈希类型元素个数小于512个，所有值小于64字节，使用listpack（7.0之后）/压缩列表（7.0之前）作为底层数据结构</li>
+<li>
+<p>否则，使用哈希表作为底层数据结构（数组+链地址法）</p>
+</li>
+<li>
+<p>元素个数大于哈希桶数量-扩容；元素个数减少-缩容</p>
+</li>
+<li>
+<p>渐进式rehash：（到达扩缩容阈值时触发，进入rehash状态）</p>
+</li>
+<li>
+<p>有两个hash表</p>
+</li>
+<li>
+<p>ht[0]：当前正在用的旧表</p>
+</li>
+<li>
+<p>ht[1]：新申请的表</p>
+</li>
+<li>
+<p>开始hash时：</p>
+</li>
+<li>
+<p>分配一个新表ht[1]</p>
+</li>
+<li>设置rehash index，从0开始</li>
+<li>每次处理请求时，顺带迁移ht[0]中一部分（一个下标上的整个链表/桶）的数据到ht[1]</li>
+<li>rehash index逐步递增，直到ht[0]为空（rehash index到数组末尾），最后把ht[1]替换为ht[0]（ht[0]的指针指向ht[1]，ht[1]的指针置为null，rehash index设置为-1）,</li>
+</ul>
+<p><strong>常用命令</strong>：</p>
+<div class="highlight"><pre><span></span><code><span class="n">HSET</span> <span class="n">key</span> <span class="n">field</span> <span class="n">value</span>
+<span class="n">HGET</span> <span class="n">key</span> <span class="n">field</span>
+<span class="n">HMSET</span> <span class="n">key</span> <span class="n">field1</span> <span class="n">value1</span> <span class="n">field2</span> <span class="n">value2</span>
+<span class="n">HMGET</span> <span class="n">key</span> <span class="n">field1</span> <span class="n">field2</span>
+<span class="n">HDEL</span> <span class="n">key</span> <span class="n">field1</span> <span class="p">[</span><span class="n">field2</span><span class="p">]</span>
+<span class="n">HLEN</span> <span class="n">key</span>
+<span class="n">HGETALL</span> <span class="n">key</span>
+</code></pre></div>
+<p><strong>应用场景</strong>：</p>
+<ul>
+<li>存储对象</li>
+<li>购物车（用户id为key 商品id为field 数量为value）</li>
+</ul>
+<h3 id="set">Set</h3>
+<p>无序不重复列表</p>
+<p><strong>底层实现</strong>：</p>
+<ul>
+<li>元素都是整数且个数小于512个，使用整数集合作为底层数据结构</li>
+<li>否则使用hash表作为底层数据结构</li>
+</ul>
+<p><strong>常用命令</strong>：</p>
+<div class="highlight"><pre><span></span><code><span class="n">SADD</span> <span class="n">key</span> <span class="n">member</span> <span class="p">[</span><span class="n">member2</span> <span class="o">...</span><span class="p">]</span>
+<span class="n">SREM</span> <span class="n">key</span> <span class="n">member</span> <span class="p">[</span><span class="n">member2</span> <span class="o">...</span><span class="p">]</span>
+<span class="n">SMEMBERS</span> <span class="n">key</span> <span class="c1"># 获取集合所有元素</span>
+<span class="n">SCARD</span> <span class="n">key</span> <span class="c1"># 获取集合个数</span>
+<span class="n">SISMEMBER</span> <span class="n">key</span> <span class="n">member</span> <span class="c1"># 判断member是否在集合key中</span>
+<span class="n">SRANDMEMBER</span> <span class="n">key</span> <span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="c1"># 随机返回count个元素</span>
+<span class="n">SPOP</span> <span class="n">key</span> <span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="c1"># 随机删除count个元素</span>
+<span class="n">SINTER</span> <span class="n">key</span> <span class="p">[</span><span class="n">key1</span> <span class="o">...</span><span class="p">]</span> <span class="c1">#交集，结果存入key</span>
+<span class="n">SINTERSTORE</span> <span class="n">destination</span> <span class="n">key</span> <span class="p">[</span><span class="n">key1</span> <span class="o">...</span><span class="p">]</span> <span class="c1">#将交集结果存入新的集合destination</span>
+<span class="n">SUNION</span> <span class="n">key</span> <span class="p">[</span><span class="n">key1</span> <span class="o">...</span><span class="p">]</span> <span class="c1"># 并集</span>
+<span class="n">SUNIONSTORE</span> <span class="n">destination</span> <span class="n">key</span> <span class="p">[</span><span class="n">key1</span> <span class="o">...</span><span class="p">]</span> <span class="c1">#将并集结果存入新的集合destination</span>
+<span class="n">SDIFF</span> <span class="n">key</span> <span class="p">[</span><span class="n">key1</span> <span class="o">...</span><span class="p">]</span> <span class="c1">#差集</span>
+<span class="n">SDIFFSTORE</span> <span class="n">destination</span> <span class="n">key</span> <span class="p">[</span><span class="n">key1</span> <span class="o">...</span><span class="p">]</span> <span class="c1">#将差集结果存入新的集合destination</span>
+</code></pre></div>
+<p><strong>应用场景</strong>：</p>
+<ul>
+<li>点赞 （SADD、SREM、SMEMBERS、SCARD）</li>
+<li>共同关注（SINTER）</li>
+<li>抽奖活动（SRANDMEMBER/SPOP）</li>
+</ul>
+<p>Set集合运算的复杂度高，数据量大的情况下，如果直接执行计算会导致Redis实例阻塞，因此可以选择从库进行聚合统计，或把数据返回给客户端，由客户端完成聚合统计，避免直接使用主库</p>
+<h3 id="zset">ZSet</h3>
+<p>相比Set，多了一个排序属性score</p>
+<p><strong>内部实现</strong>：</p>
+<ul>
+<li>有序集合的元素个数小于128个，并且每个元素的值小于64时，使用压缩列表（7.0之前）/listpack作为底层数据结构</li>
+<li>否则使用跳表作为底层数据结构</li>
+</ul>
+<p><strong>常用命令</strong>：</p>
+<div class="highlight"><pre><span></span><code><span class="n">ZADD</span> <span class="n">key</span> <span class="n">score</span> <span class="n">member</span> <span class="p">[[</span><span class="n">score</span> <span class="n">member</span><span class="p">]</span> <span class="o">...</span><span class="p">]</span>
+<span class="n">ZREM</span> <span class="n">key</span> <span class="n">member</span>
+<span class="n">ZSCORE</span> <span class="n">key</span> <span class="n">member</span>
+<span class="n">ZCARD</span> <span class="n">key</span>
+<span class="n">ZINCRBY</span> <span class="n">key</span> <span class="n">increment</span> <span class="n">member</span>
+<span class="n">ZRANGE</span> <span class="n">key</span> <span class="n">start</span> <span class="n">stop</span> <span class="p">[</span><span class="n">WITHSCORES</span><span class="p">]</span> <span class="c1"># 正序获取有序集合key从start到stop下标的元素，可选返回分数</span>
+<span class="n">ZREVRANGE</span> <span class="n">key</span> <span class="n">start</span> <span class="n">stop</span> <span class="c1"># 逆序</span>
+<span class="n">ZRANGEBYSCORE</span> <span class="n">key</span> <span class="nb">min</span> <span class="nb">max</span> <span class="p">[</span><span class="n">WITHSCORES</span><span class="p">]</span> <span class="p">[</span><span class="n">LIMIT</span> <span class="n">offset</span> <span class="n">count</span><span class="p">]</span> <span class="c1"># 返回有序集合中指定分数区间内的成员，分数由低到高排序</span>
+<span class="c1"># Zset不支持差集运算</span>
+</code></pre></div>
+<p><strong>应用场景</strong>：</p>
+<ul>
+<li>排行榜（ZINCRBY、ZSCORE、ZRANGE、ZREVRANGE）</li>
+<li>电话、姓名排序（ZRANGEBYLEX、ZREVRANGEBYLEX）</li>
+</ul>
+<h3 id="bitmap">BitMap</h3>
+<p>位图，适合数据量大且使用二值计算的场景。</p>
+<p><strong>内部实现</strong>：使用String类型作为底层数据结构</p>
+<p><strong>应用场景</strong>：</p>
+<ul>
+<li>签到统计（SETBIT、GETBIT、BITCOUNT）</li>
+<li>判断用户登录态（SETBIT、GETBIT、BITCOUNT）</li>
+</ul>
+<h3 id="hyperloglog">HyperLogLog</h3>
+<p>一种概率型数据结构，用于基数统计，特点：占用极少内存，每个HyperLogLog指需要12KB就能统计接近2^64个不同元素</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li><strong>内存超小</strong>：不管你存 1k、1亿，最多 12KB 内存。</li>
+<li><strong>操作简单</strong>：三个命令搞定（PFADD / PFCOUNT / PFMERGE）。</li>
+<li><strong>适合大数据场景</strong>：做去重计数时非常高效。</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li><strong>有误差</strong>：统计不是精确值，误差大约 ±0.81%。</li>
+<li><strong>不可获取原始数据</strong>：只能得到数量，不能得到去重后的元素集合。</li>
+</ul>
+<p><strong>应用场景</strong>：（PFADD、PFCOUNT）</p>
+<ul>
+<li>网站的 <strong>UV（独立访客数）</strong> 统计；</li>
+<li>日志系统的 <strong>独立 IP 数量</strong> 统计；</li>
+<li>广告平台的 <strong>触达用户数</strong> 估算；</li>
+<li>大数据场景下的快速基数估计。</li>
+</ul>
+<h3 id="geo">GEO</h3>
+<p>Redis <strong>GEO</strong> 命令是基于 <strong>Sorted Set (ZSet)</strong> 实现的：</p>
+<ul>
+<li>元素（member）= 位置的名称（如用户ID、地点名）。</li>
+<li>score = 对应位置的 <strong>经纬度编码（GeoHash 转换成 52 位整数）</strong>。</li>
+</ul>
+<p><strong>应用场景</strong>：</p>
+<ul>
+<li><strong>附近的人/店</strong>（LBS）：存储用户或商户的经纬度，查询半径范围内的目标。</li>
+<li><strong>打车/外卖</strong>：找出一定范围内的骑手/司机。</li>
+<li><strong>物流调度</strong>：计算仓库与用户的距离，分配最近仓库。</li>
+</ul>
+<h3 id="stream">Stream</h3>
+<ul>
+<li>Redis 的 <strong>Stream 类型</strong> = <strong>可持久化的消息队列</strong>。</li>
+<li>它类似 Kafka/RabbitMQ 这种消息流，但更轻量。</li>
+<li>支持 <strong>生产者写入、消费者读取、消费分组、消息确认</strong> 等特性。</li>
+</ul>
+<p>可以把它理解为 <strong>日志型消息队列</strong>，每条消息带有：</p>
+<ul>
+<li>一个 <strong>唯一 ID</strong>（有序、全局唯一）；</li>
+<li>一个 <strong>消息体（键值对）</strong>。</li>
+</ul>
+<p><strong>应用场景:</strong></p>
+<ul>
+<li><strong>消息队列</strong>：生产者-消费者模型，支持分组、确认。</li>
+<li><strong>日志收集</strong>：存储业务日志、操作流水。</li>
+<li><strong>实时数据处理</strong>：结合 <code>XREAD BLOCK</code> 做实时计算。</li>
+<li><strong>事件通知</strong>：比如订单状态变更通知下游服务。</li>
+</ul>
+<p>Redis Stream = <strong>轻量级队列</strong>，上手快、集成方便，但缺少专业 MQ 的 <strong>大规模存储、复杂消费模型、强一致性保障</strong>。如果需求是简单队列或中小规模，用 Stream 足够；如果是金融级、日志分析级别，就要用 Kafka / RocketMQ。</p>
+<h2 id="_2">持久化</h2>
+<h3 id="aof-append-only-file">AOF Append Only File</h3>
+<p>只会记录写操作命令，读操作命令不会被记录。</p>
+<p>先执行写操作再将命令追加到AOF日志（避免额外的检查开销；不会阻塞当前写操作命令的执行）（有丢失的风险；可能会给下一个命令带来阻塞）</p>
+<p>Redis执行完写操作命令后，会将命令追加到server.aof_buf缓冲区，然后通过write系统调用，将aof_buf缓冲区的数据写到AOF文件，具体内核缓冲区的数据什么时候落盘由内核决定。</p>
+<p><strong>AOF写回策略（redis.conf文件中的appendfsync，调用fysnc函数的时机选择）</strong></p>
+<ul>
+<li><strong>appendfsync=Always</strong>，每次写操作执行完后<strong>同步</strong>将AOF落盘（高可靠，持久化大Key可能会阻塞主线程）</li>
+<li><strong>appendfsync=Everysec</strong>，每次写操作执行完后，先将命令写入到AOF文件的内核缓冲区，每隔一秒落一次盘（折中，宕机丢失1秒数据）</li>
+<li><strong>appendfsync=No</strong>，由操作系统决定何时将缓冲区内容落盘（高性能）</li>
+</ul>
+<h3 id="aof">AOF重写机制</h3>
+<p><strong>Redis</strong>为了避免AOF文件过大，提供了AOF重写机制，当AOF文件的大小超过所设定的阈值时，Redis就会启用AOF重写机制，压缩AOF文件。</p>
+<p>AOF重写机制是在重写时，读取当前数据库中的所有键值对，然后将每一个键值对用一条命令记录到新的AOF文件，等到全部记录完后，就将新的AOF文件替换掉现有的AOF文件。（即使某个键值对被反复修改，最终也只需要根据这个键值对当前的最新状态用一条命令去记录，减少了命令的数量）</p>
+<ul>
+<li>
+<p>为什么不能直接复用现有的AOF文件</p>
+</li>
+<li>
+<p>如果AOF重写过程中失败了，现有的AOF文件不会被污染</p>
+</li>
+</ul>
+<h3 id="aof_1">AOF后台重写</h3>
+<p><strong>Redis</strong>的重写AOF过程是由后台子进程bgrewriteaof来完成的：</p>
+<ul>
+<li>子进程进行重写期间，主进程可以继续处理命令请求，避免阻塞主进程</li>
+<li>子进程带有主进程的数据副本：创建子进程时，父子进程是共享内存数据的，不过共享的内存只能以只读的方式，当父子进程任意一方修改了共享内存，就会发生写时复制，父子进程就有了独立的数据副本，就不用加锁保证安全</li>
+</ul>
+<p>子进程怎么拥有主进程一样的数据副本（写时复制）</p>
+<ul>
+<li>主进程通过fork系统调用生成bgrewriteaof子进程，os把主进程的页表复制一份给子进程（两者的虚拟空间不同，但是物理空间相同），这样子进程就共享了父进程的物理内存数据了，能够节约物理内存资源，页表对应的页表项的属性会标记该物理内存的权限为只读</li>
+<li>父进程/子进程向这个内存发起写操作时，CPU会触发写保护中断，os会在写保护中断处理函数里进行物理内存的复制，并重新设置其内存映射关系，将父子进程的内存读取权限设置为可读写</li>
+</ul>
+<p>如果写时复制阶段修改的是一个bigkey，复制物理内存数据的过程就会比较耗时，有阻塞主进程的风险</p>
+<p>在重写AOF期间，当Redis执行完一个写命令后，它会同时将这个写命令写入到AOF缓冲区和AOF重写缓冲区。</p>
+<p>当子进程完成AOF重写工作后，会向主进程发送一条信号，主进程收到信号后，会调用一个信号处理函数：</p>
+<ul>
+<li>将AOF重写缓冲区的所有内容追加到新的AOF的文件中</li>
+<li>新的AOF文件进行改名，覆盖现有的AOF文件</li>
+</ul>
+<p>整个AOF后台重写过程中，除了发生写时复制时会对主进程造成阻塞，还有信号处理函数执行时也会对主进程造成阻塞，在其他时候AOF后台重写都不会阻塞主进程。</p>
+<h3 id="rdb">RDB快照</h3>
+<p>Redis提供了两个命令来生成RDB文件，分别是save和bgsave，区别在于是否在主线程里执行：</p>
+<ul>
+<li>save会在主线程生成RDB文件，如果写入RDB文件的时间太长，会阻塞主线程</li>
+<li>bgsave会创建一个子进程来生成RDB文件，可以避免主线程的阻塞</li>
+</ul>
+<p>RDB快照的缺点：在服务器发生故障时，丢失的数据会比AOF持久化的方式更多，因为RDB快照是全量快照的方式，因此执行的频率不能太频繁，AOF日志可以以秒级的方式记录操作命令，丢失的数据相对更少。</p>
+<p>执行bgsave过程中，依然可以继续处理操作命令，关键技术就是写时复制。发生了写时复制后，RDB快照保存的是原本的内存数据。如果系统恰好在RDB快照文件创建完毕后崩溃了，那么Redis将会丢失主线程在快照期间修改的数据。</p>
+<p>如果所有的共享内存都被修改，内存占用会是原来的两倍（写时复制）</p>
+<h3 id="aofrdb-aof-use-rdb-preamble-yes">混合使用AOF日志和RDB快照 （aof-use-rdb-preamble yes）</h3>
+<p>开启混合持久化后，在AOF重写日志时，fork出来的重写子进程会先将与主线程共享的内存数据以RDB方式写入到AOF文件，然后主线程处理的操作命令会被记录在重写缓冲区，重写缓冲区的增量命令以AOF的方式写入到AOF文件，写入完成后通知主进程将新的还有RDB格式和AOF格式的AOF文件替换旧的AOF文件。（前半部分时RDB格式的全量数据，后半部分是AOF格式的增量数据）--加载速度会很快，数据更少丢失</p>
+<p>大key除了会影响持久化外（fork、写时复制时阻塞），还可能导致客户端超时阻塞、引发网络拥塞、阻塞工作线程、redis节点内存分布不均</p>
+<h2 id="_3">策略</h2>
+<h3 id="_4">过期删除策略</h3>
+<p>当给key设置了过期时间，Redis会把该key带上过期时间存储到过期字典。过期字典实际上是哈希表，可以在O(1)的时间复杂度内查找key的过期时间。当我们查询一个key时，Redis首先检查该key是否存在与过期字典中：</p>
+<ul>
+<li>不存在，正常读取键值</li>
+<li>存在，获取key的过期时间，和当前系统时间进行比对，没过期正常返回</li>
+</ul>
+<p>常见过期策略有：</p>
+<ul>
+<li>定时删除：设置key的过期时间时，同时创建一个定时事件，当时间到达时，由事件处理器执行key的删除操作（优点：保证过期key尽快删除，内存尽快释放；缺点：较多过期key情况下，删除key可能占用相当一部分cpu）</li>
+<li>惰性删除：不主动删除过期键，每次从数据库访问key时，都检测key是否过期，如果过期则删除该key（优点：使用很少系统资源，CPU友好；缺点：如果一个key已经过期，仍然会保留在内存中，只要这个key一直没有被访问，占用的内存就不会释放，空间浪费，内存不友好）</li>
+<li>定期删除：每隔一段时间从数据库中随机取一定数量key进行检查，删除其中过期key（优点：通过限制删除操作执行的时长和频率，来减少删除操作对CPU的影响，同时也能删除一部分过期的数据减少无效内存占用；缺点：内存清理方面没有定时删除效果好，同时也没有惰性删除使用的系统资源少，难以确定删除操作执行的时长和频率。）</li>
+</ul>
+<p>Redis选择惰性删除和定期删除两种策略配合使用。</p>
+<ul>
+<li>
+<p>Redis在访问/修改key之前会调用expireIfNeeded函数对key进行检查：</p>
+</li>
+<li>
+<p>如果过期，删除key（根据lazyfree_lazy_expire字段决定异步删除还是同步删除），然后返回null</p>
+</li>
+<li>
+<p>没过期，正常返回</p>
+</li>
+<li>
+<p>Redis每隔一段时间随机从数据库中取出一定数量key进行检查，删除过期key</p>
+</li>
+<li>
+<p>从过期字典中随机抽取一定数量key</p>
+</li>
+<li>检查是否过期，删除已过期</li>
+<li>已过期数量超过1/4，继续步骤a，否则停止，等待下一轮检查</li>
+</ul>
+<p>为了保证定期删除不会出现循环过度导致线程卡死，增加了定期删除循环流程的时间上限</p>
+<h3 id="_5">内存淘汰策略</h3>
+<p>Redis内存淘汰策略有八种，大体分为不进行数据淘汰和进行数据淘汰两类：</p>
+<ol>
+<li>
+<p>不进行数据淘汰策略</p>
+</li>
+<li>
+<p>noeviction（3.0之后默认使用）：当运行内存超过最大设置内存时，不淘汰任何数据，禁止写入</p>
+</li>
+<li>
+<p>进行数据淘汰的策略</p>
+</li>
+<li>
+<p>在设置了过期时间的数据中进行淘汰</p>
+</li>
+<li>
+<p>volatile-random：随机淘汰设置了过期时间的任意键值</p>
+</li>
+<li>volatile-ttl：优先淘汰更早过期的键值</li>
+<li>colatile-lru：淘汰所有设置了过期时间的键值中最久未使用的键值</li>
+<li>
+<p>volatile-lfu：淘汰所有设置了过期时间的键值中最少使用的键值</p>
+</li>
+<li>
+<p>在所有数据范围内进行淘汰</p>
+</li>
+<li>
+<p>allkeys-random：随机淘汰任意键值</p>
+</li>
+<li>allkeys-lru：淘汰整个键值中最久未使用的键值</li>
+<li>allkeys-lfu：淘汰整个键值中最少使用的键值</li>
+</ol>
+<p>使用config get maxmemory-policy命令查看当前Redis的内存淘汰策略</p>
+<p>传统LRU算法问题：</p>
+<ul>
+<li>需要用链表管理所有的缓存数据，带来额外空间开销</li>
+<li>当有数据被访问时，需要在链表上把数据移动到头端，如果有大量数据被访问，就会带来很多链表移动操作，耗时，降低Redis性能</li>
+</ul>
+<p>Redis实现了一种近似LRU算法，在Redis的对象结构体中添加一个额外字段，记录最后一次访问时间。当Redis进行内存淘汰时，会采用随机采样的方式来淘汰数据，随机取n个淘汰最近没有使用的那个。</p>
+<ul>
+<li>优点：不用为所有数据维护一个大链表，节省空间占用；不用在每次数据访问时都移动链表，提升缓存性能</li>
+<li>缺点：无法解决缓存污染问题，比如一次读取大量数据，这些数据只会被读一次，但是会留存在redis缓存中很长一段时间</li>
+</ul>
+<p>在LFU算法中，Redis对象中的lru字段高16位存储访问时间戳（ldt），低8位存储访问频次（logc），logc会随时间推移而衰减。</p>
+<h2 id="_6">高可用</h2>
+<h3 id="_7">主从复制</h3>
+<p>避免单点故障：主从复制，主从服务器之间采用读写分离的方式。使用replicaof（5.0之前使用slaveof）命令形成主从关系。</p>
+<h4 id="_8">第一次同步</h4>
+<ol>
+<li>
+<p>建立链接、协商同步：</p>
+</li>
+<li>
+<p>从服务器就会给主服务器发送psync命令，表示要进行数据同步。psync命令包含两个参数，分别是主服务器的runID（每个redis服务器启动时都会自动生产一个随机ID唯一标识自己）和复制进度offset。初始值分别为?和-1。</p>
+</li>
+<li>
+<p>主服务器收到psync命令后会用FULLRESYNC做为响应命令返回给对方，会带上两个参数：主服务器的runID和主服务器当前的复制进度offset。从服务器收到响应后会记录这两个值。FULLRESYNC是全量复制。</p>
+</li>
+<li>
+<p>主服务器同步数据给从服务器</p>
+</li>
+<li>
+<p>主服务器执行bgsave命令生成RDB文件</p>
+</li>
+<li>把RDB文件发送给从服务器。</li>
+<li>从服务器收到RDB文件后会先清空当前数据，然后载入RDB文件。</li>
+</ol>
+<p>主服务器会在这三个阶段中将收到的写操作命令写入到replication buffer缓冲区</p>
+<ol>
+<li>
+<p>主服务器发送新写操作命令给从服务器</p>
+</li>
+<li>
+<p>收到RDB载入完成的消息后，主服务器将replication buffer缓冲区里所记录的写操作命令发送给从服务器，从服务器执行发来的命令</p>
+</li>
+</ol>
+<h4 id="_9">命令传播</h4>
+<p>主从服务器在完成第一次同步后，双方会维护一个TCP连接。后续主服务器可以通过这个连接将写操作命令传播给从服务器，从服务器执行该命令，使得与主服务器的数据库状态相同。</p>
+<h4 id="_10">分摊主服务器的压力</h4>
+<p>主服务器是可以有多个从服务器的，如果从服务器数量太多，且都与主服务器进行全量同步的话，就会带来两个问题：</p>
+<ul>
+<li>由于是通过bgsave命令来生成RDB文件，那么主服务器就会忙于使用fork创建子进程，如果主服务器的内存数据非常大，在执行fork函数时是会阻塞主线程的，从而使得redis无法正常处理请求</li>
+<li>传输RDB文件会占用主服务器的网络带宽，会对主服务器的响应速度产生影响</li>
+</ul>
+<p>从服务器可以有自己的从服务器，通过这种方式，主服务器生成RDB和传输RDB的压力可以分摊到含有从服务器的从服务器上。</p>
+<h4 id="_11">增量复制</h4>
+<ul>
+<li>从服务器恢复网络后，发送psync命令给主服务器，offset参数不是-1</li>
+<li>主服务器收到命令，用continue响应命令告诉从服务器接下来采用增量复制的方式同步数据</li>
+<li>主服务器将断线期间所执行的写命令发送给从服务器，从服务器执行这些命令</li>
+</ul>
+<p>主服务器怎么知道要将哪些增量数据发送给从服务器</p>
+<ul>
+<li>repl_backlog_buffer：唤醒缓冲区，用于断线找差异数据</li>
+<li>replication offset：标记缓冲区的同步进度，主从服务器各有自己的偏移量，主服务器使用master_repl_offset记录自己写到的位置，从服务器使用slave_repl_offset记录自己读到的位置</li>
+</ul>
+<p>在主服务器进行命令传播时，不仅会将写命令发送给从服务器，还会将写命令写入到repl_backlog_buffer缓冲区。</p>
+<p>网络断开后，从服务器重连时，会通过psync命令将自己的复制偏移量slave_repl_offset发送给主服务器，主服务器根据自己的master_repl_offset和slave_repl_offset之间的差距，决定对从服务器之行哪种同步操作：</p>
+<ul>
+<li>如果从服务器要读取的数据还在repl_backlog_buffer缓冲区，增量同步</li>
+<li>否则，全量同步</li>
+</ul>
+<h3 id="_12">哨兵</h3>
+<p>实现主从节点故障转移，监测主节点是否存活，如果挂了就会选举一个从节点切换为主节点，并把新的主节点的相关信息通知给从节点和客户端。</p>
+<p>哨兵节点主要负责三件事情：监控（如何监控节点、如何判断主节点是否真的故障）、选主（选主规则）、通知（如何把新的主节点信息通知给从节点和客户端）</p>
+<h4 id="_13">监控</h4>
+<p>每隔一秒给所有主从节点发送PING命令，主从节点收到PING命令会发送一个响应命令给哨兵。如果节点没在规定时间内响应命令，哨兵就会将他们标记为主观下线。</p>
+<p>客观下线只适用于主节点。针对主节点设计主观下线和客观下线，是因为主节点可能并没有故障，只是因为主节点的压力较大或者网络拥塞，导致主节点没在规定时间内响应哨兵的PING命令。</p>
+<p>为了减少误判，哨兵在部署的时候不会只部署一个节点，而是用多个节点部署成哨兵集群。通过多个哨兵节点一起判断，就可以避免单个哨兵因为自己网络问题导致的主节点下线误判。</p>
+<p>当一个哨兵判断主节点主观下线后，会向其他哨兵发起命令，进行主节点下线投票，赞成票超过阈值quorum则判定客观下线。</p>
+<h4 id="_14">选主</h4>
+<p>主节点发生故障时，要在哨兵集群中选出一个leader执行主从切换。选leader的过程其实是一个投票的过程。投票开始前，得有候选者，哪个哨兵节点判断主节点位客观下线，这个节点就是候选者。</p>
+<p>候选者会向其他哨兵发送命令，表明希望成为Leader来执行主从切换，让其他哨兵投票。每个哨兵只有一次投票机会，如果用完后就不能参与投票了，可以投给自己或别人，只有候选者才能把票投给自己。</p>
+<p>候选者成为Leader必须满足两个条件：</p>
+<ul>
+<li>拿到半数以上的赞成票</li>
+<li>拿到票数的同时还需要大于等于哨兵配置文件中的quorum值</li>
+</ul>
+<p>哨兵节点至少要三个的原因也是因为，如果只有两个哨兵节点，且都为候选者的话，就选不出Leader。或者如果有一个哨兵挂了，另外一个哨兵也同样不能拿到半数以上选票。</p>
+<p>如果3个哨兵节点挂了2个，只能人为介入或者增加哨兵节点。</p>
+<p>quorum的值建议设置为哨兵个数的二分之一加1，且数量应该是奇数。</p>
+<h5 id="_15">主从故障转移过程</h5>
+<ol>
+<li>
+<p>在旧主节点下属的从节点选一个，作为主节点</p>
+</li>
+<li>
+<p>挑选一个状态良好、数据完整的从节点（首先把已经下线的从节点过滤掉，然后把以往网络连接状态不好的从节点过滤掉：down-after-milliseconds*10，断连超过十次1，说明这个从节点网络状况不好。接下来对所有从节点进行三轮考察：优先级、复制进度、ID号），哨兵leader发送SLAVEOF no one，将这个从节点转为主节点</p>
+</li>
+<li>
+<p>哨兵leader每秒一次的频率给新主节点发送INFO命令，观察命令回复中的角色信息，当观察到slave变为master时，哨兵leader就知道被选中的从节点成功升级为新主节点</p>
+</li>
+<li>
+<p>让旧主节点下属所有从节点修改复制目标为新主节点</p>
+</li>
+<li>
+<p>向旧主节点所有从属节点发送SLAVEOF，让它们成为新主节点的从节点</p>
+</li>
+<li>
+<p>将新主节点的IP和信息通过发布者/订阅者机制通知给客户端</p>
+</li>
+<li>
+<p>客户端和哨兵建立连接后，会订阅哨兵提供的频道。主从切换完成后，哨兵就向+switch-master频道发布新主节点的IP地址和端口信息，这时候客户端就可以收到这个信息，然后和新主节点进行通信</p>
+</li>
+<li>
+<p>继续监控旧主节点，当旧主节点重新上线，将它设置为新主节点的从节点</p>
+</li>
+<li>
+<p>旧主节点重新上线时，向它发送SLAVEOF命令</p>
+</li>
+</ol>
+<h5 id="_16">哨兵集群组成</h5>
+<p>哨兵节点之间使用过Redis的发布者和订阅者机制来完成相互发现的。主从集群中，主节点上有一个名为__sentinel__:hello的频道，不同哨兵就是通过它来相互发现，实现互相通信的（在频道发送自己的信息，其他哨兵都会收到）。</p>
+<h3 id="redis-cluster">Redis Cluster集群</h3>
+<p>哨兵模式基于主从模式，实现读写分离，可以实现故障转移，可用性高。但是每个节点存储的数据是一样的，浪费内存，并且不好在线扩容。</p>
+<p>Redis Cluster集群实现了Redis的分布式存储。对数据进行分片，每台Redis节点上存储不同的内容，解决在线扩容问题。并且它可以保存大量数据，分散数据到各个Redis实例，还提供复制和故障转移功能。</p>
+<p>Redis Cluster采用哈希槽来处理数据和实例之间的映射关系。</p>
+<p>一个切片集群被分为16384个slot，每个进入Redis的键值对会根据key进行hash，分配到slot中。</p>
+<p>使用CRC16算法计算出一个16bit的值，再对16384取模，落到最终的slot。</p>
+<p>在Redis Cluster模式下，节点对请求的处理过程如下：</p>
+<ul>
+<li>
+<p>根据 key 计算槽位，检查当前节点是否负责：</p>
+</li>
+<li>
+<p>如果不负责 → 返回 <strong>MOVED</strong>。</p>
+</li>
+<li>
+<p>如果负责该槽位：</p>
+</li>
+<li>
+<p>如果 slot 正常 → 执行请求。</p>
+</li>
+<li>
+<p>如果 slot 处于 <strong>MIGRATING</strong>：</p>
+</li>
+<li>
+<p>如果 key 已经迁出 → 返回 <strong>ASK</strong>（告诉客户端去目标节点）。</p>
+</li>
+<li>
+<p>如果 key 还在本节点 → 继续在本节点执行。</p>
+</li>
+<li>
+<p>如果 slot 处于 <strong>IMPORTING</strong>：</p>
+</li>
+<li>
+<p>客户端必须带 <code>ASKING</code> → 才能临时执行；</p>
+</li>
+<li>否则 → 返回 MOVED。</li>
+</ul>
+<p>Moved重定向：将哈希槽所在的新实例的IP和port带回去，修改客户端槽位映射（完成迁移）</p>
+<p>ASK重定向：槽位迁移过程中，临时重定向，不更新槽位映射</p>
+<h4 id="gossip">节点间通信 Gossip</h4>
+<p>Gossip是一种谣言传播协议，每个节点周期性地从节点列表中选择k个节点，将本节点存储的信息传播出去，直到所有节点信息一致，算法收敛。</p>
+<p>Gossip协议包括多种消息类型：</p>
+<ul>
+<li>meet：通知新节点加入。消息发送者通知接受者加入到当前集群，meet消息通信正常完成后，接收节点会加入到集群中并周期性的ping、pong消息交换。</li>
+<li>ping：节点每秒会向集群中其他节点发送ping消息。</li>
+<li>pong：接收到ping、meet消息时，作为响应消息回复给发送方确认消息正常通信。</li>
+<li>fail：当节点判定集群内另一个节点下线时，会向集群内广播一个fail消息，其他节点接收到fail消息后把对应节点更新为下线状态。</li>
+</ul>
+<h4 id="_17">故障转移</h4>
+<p>redis集群通过ping/pong消息实现故障发现：</p>
+<ul>
+<li>主观下线：某个节点认为另一个节点不可用</li>
+<li>客观下线：标记一个节点真正下线，集群内多个节点都认为该节点不可用，达成共识。</li>
+</ul>
+<p>Redis Cluster 节点下线流程：</p>
+<ol>
+<li>节点失联 → 被标记 PFAIL。</li>
+<li>多数 master 确认 → 标记 FAIL 并广播。</li>
+<li>如果是 master，下属 slave 发起选举。</li>
+<li>投票选出新的 master，更新槽位映射。</li>
+<li>客户端通过 MOVED/ASK 被重定向到新的节点。</li>
+</ol>
+<p>假设主节点 <strong>masterA</strong> 宕机（触发故障转移），它有从节点 <strong>slaveA1、slaveA2</strong>：</p>
+<ol>
+<li>
+<p><strong>检测到 masterA 下线</strong></p>
+</li>
+<li>
+<p>集群中大多数 master 节点确认 masterA FAIL。</p>
+</li>
+<li>
+<p><strong>从节点发起选举</strong></p>
+</li>
+<li>
+<p>slaveA1、slaveA2 发现 masterA 下线，开始竞争成为新的 master。</p>
+</li>
+<li>
+<p>它们会向其他 master 请求投票。</p>
+</li>
+<li>
+<p><strong>投票过程</strong></p>
+</li>
+<li>
+<p>其他 master 节点根据条件（例如谁先同步过最新的复制偏移量）来投票。</p>
+</li>
+<li>
+<p>需要超过半数的 master 节点投票，slave 才能成为新的 master。</p>
+</li>
+<li>
+<p><strong>选出新的 master</strong></p>
+</li>
+<li>
+<p>比如 slaveA1 获胜，升级为 master。</p>
+</li>
+<li>
+<p>Cluster 广播新的拓扑信息，更新 slot → 节点映射。</p>
+</li>
+<li>
+<p><strong>客户端重定向</strong></p>
+</li>
+<li>
+<p>客户端访问原来 masterA 的 slot 时，会收到 <code>MOVED</code> 重定向到新的 masterA1。</p>
+</li>
+</ol>
+<p>为什么Redis Cluster的hash slot时16384</p>
+<p>Redis Cluster 选择 <strong>16384 (2¹⁴)</strong> 个 Hash Slot 是一种 <strong>性能与内存开销的折中</strong>：</p>
+<ul>
+<li>足够细粒度，便于数据迁移与负载均衡；</li>
+<li>占用的元数据小（slot信息仅 2KB/节点），心跳通信轻量；</li>
+<li>位运算方便（基于bitmap），效率高；</li>
+<li>不必用到 65536 这样更大的值，避免额外开销（gossip消息大）。</li>
+</ul>
+<h2 id="_18">缓存</h2>
+<h3 id="_19">缓存雪崩</h3>
+<p>在同一时刻，大量缓存数据同时失效或不可用，导致大量请求直接打到数据库/后端服务，引发 <strong>数据库压力骤增甚至宕机</strong> 的情况：</p>
+<ul>
+<li>
+<p>大量缓存同时实效</p>
+</li>
+<li>
+<p>过期时间错峰：过期时间加上随机数</p>
+</li>
+<li>加互斥锁：如果发现访问的数据不在Redis，加互斥锁，保证同一时间只有一个请求构建缓存，同时设置超时时间</li>
+<li>热点数据永不过期：高频访问的数据不设置TTL，后台定时刷新（不仅定时更新缓存，还要频繁检测缓存是否存在）</li>
+<li>多级缓存（应用缓存+Redis缓存+DB）</li>
+<li>
+<p>缓存预热</p>
+</li>
+<li>
+<p>Redis故障宕机</p>
+</li>
+<li>
+<p>限流&amp;降级&amp;熔断：数据库或下游压力过大时，服务端做降级处理（返回默认值/静态数据），并限制流量，甚至可以启动服务熔断机制，暂停业务应用对缓存服务的访问，直接返回错误。</p>
+</li>
+<li>构建Redis缓存高可靠集群：通过主从节点的方式构建Redis高可靠集群</li>
+</ul>
+<h3 id="_20">缓存击穿</h3>
+<p>热点数据过期：</p>
+<ul>
+<li>热key永不过期+后台刷新</li>
+<li>互斥锁</li>
+<li>提前续约：真正过期前，后台线程/任务去刷新缓存（预热机制）；业务层看到缓存快过期时触发异步更新</li>
+<li>限流/降级</li>
+</ul>
+<h3 id="_21">缓存穿透</h3>
+<p>访问的数据既不在缓存中也不在数据库中。缓存穿透发生一般有两种情况：</p>
+<ul>
+<li>业务误操作：缓存中的数据和数据库中的数据都被误删除</li>
+<li>黑客恶意攻击：故意大量访问某些读取不存在数据的业务</li>
+</ul>
+<p>解决方案：</p>
+<ul>
+<li>非法请求限制：API入口判断请求参数是否合理，请求参数是否有非法值、请求字段是否存在</li>
+<li>缓存空值或默认值：针对查询的数据设置一个空值或者默认值</li>
+<li>使用布隆过滤器快速判断数据是否存在，避免通过查询数据库来判断数据是否存在</li>
+</ul>
+<p>布隆过滤器：有初始值都为0的位图数组和N个哈希函数两部分组成。写入数据时，在布隆过滤器做标记，下次查询数据是否在数据库时，只需要查询布隆过滤器，如果查询到数据没有被标记，说明不在数据库中。</p>
+<ol>
+<li>使用N个哈希函数分别对数据进行哈希计算，得到N个哈希值</li>
+<li>将第一步的N个hash值对位图数组的长度取模，得到每个哈希值在位图数组的对应位置</li>
+<li>将每个哈希值在位图数组的对应位置的值设置为1</li>
+<li>查询时，判断所有位置全为1，则存在，否则不存在（不存在肯定不存在，存在可能存在）</li>
+</ol>
+<h3 id="_22">数据库和缓存一致性问题</h3>
+<p>造成缓存和数据库的数据不一致的现象是因为并发问题。</p>
+<h4 id="cache-aside">Cache Aside 旁路缓存策略</h4>
+<p>不更新缓存，删除缓存中的数据，然后到读取数据的时候更新缓存。</p>
+<p>写策略：（缓存写入远比数据库写入快）</p>
+<ul>
+<li>更新数据库数据</li>
+<li>
+<p>删除缓存中的数据</p>
+</li>
+<li>
+<p>消息队列重试机制：如果删除缓存失败，从消息队列重新读取数据，再次删除缓存，重试超过一定次数，给业务层发送报错信息；如果删除缓存成功，把数据从消息队列移除。</p>
+</li>
+<li>
+<p>订阅MySQL binlog：订阅binlog日志，拿到具体要操作的数据，再执行缓存删除</p>
+</li>
+<li>
+<p>Canal中间件模仿MySQL主从复制协议，把自己伪装成MySQL的从节点，向MySQL主节点发送dump请求，复制binlog，解析后转换为便于读取的结构化数据供下游程序订阅使用。具体做法如下：</p>
+</li>
+<li>
+<p>将binlog日志采集发送到MQ队列</p>
+</li>
+<li>编写一个简单的缓存删除，订阅binlog日志</li>
+<li>根据更新log删除缓存，通过ACK机制确认处理这条更新log，保证数据缓存一致性</li>
+</ul>
+<p>读策略：</p>
+<ul>
+<li>命中缓存，直接返回</li>
+<li>没有命中，查库，写缓存加过期时间（兜底），返回用户</li>
+</ul>
+<p>如果业务对缓存命中率有很高要求，可以采用先更新数据库再更新缓存，为了解决其中的并发更新问题，可以加分布式锁，更新完缓存时，给缓存加上较短的过期时间，即使出现缓存不一致，缓存的数据也会很快过期。</p>
+<p>针对先删缓存再更新数据库方案在读写并发请求而造成的缓存不一致的解决办法是：延迟双删--删除缓存，更新数据库，睡眠，删除缓存</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../os/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Os">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Os
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

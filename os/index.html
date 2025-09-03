@@ -1,0 +1,2134 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/os/">
+      
+      
+        <link rel="prev" href="../mysql/">
+      
+      
+        <link rel="next" href="../redis/">
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Os - Jerry's site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Jerry&#39;s site" class="md-header__button md-logo" aria-label="Jerry's site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M403 211.7c32.2-24.9 53-63.9 53-107.7 0-75.1-60.9-136-136-136S184 28.9 184 104c0 43.9 20.8 82.9 53 107.7-32.2 16.3-59 41.8-76.8 73.1L112 264.2V224c0-13.3-10.7-24-24-24s-24 10.7-24 24v19.6l-22.5-9.7c-12.2-5.2-26.3.4-31.5 12.6s.4 26.3 12.6 31.5c36.1 15.5 75.9 32.5 119.4 51.2-3.9 14.9-6 30.6-6 46.7 0 70 39.1 130.8 96.6 161.9 7.9 4.3 16.9 6.1 25.9 6.1h123c9 0 18-1.8 25.9-6.1 57.5-31.1 96.6-92 96.6-161.9 0-16.2-2.1-31.8-6-46.7 43.5-18.7 83.4-35.7 119.4-51.2 12.2-5.2 17.8-19.3 12.6-31.5s-19.3-17.8-31.5-12.6l-22.5 9.7V224c0-13.3-10.7-24-24-24s-24 10.7-24 24v40.2l-48.2 20.6c-17.9-31.3-44.6-56.8-76.8-73.1M296 416a24 24 0 1 1 48 0 24 24 0 1 1-48 0m24-120a24 24 0 1 1 0 48 24 24 0 1 1 0-48M248 80a24 24 0 1 1 48 0 24 24 0 1 1-48 0m120-24a24 24 0 1 1 0 48 24 24 0 1 1 0-48m-75.8 103.3c-2.7-4.8-4.2-10.2-4.2-15.7 0-17.5 14.2-31.6 31.6-31.6h.8c17.5 0 31.6 14.2 31.6 31.6 0 5.5-1.4 10.9-4.2 15.7L327 195.8c-3.1 5.4-10.8 5.4-13.9 0l-20.9-36.6z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jerry's site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Os
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Jerry&#39;s site" class="md-nav__button md-logo" aria-label="Jerry's site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M403 211.7c32.2-24.9 53-63.9 53-107.7 0-75.1-60.9-136-136-136S184 28.9 184 104c0 43.9 20.8 82.9 53 107.7-32.2 16.3-59 41.8-76.8 73.1L112 264.2V224c0-13.3-10.7-24-24-24s-24 10.7-24 24v19.6l-22.5-9.7c-12.2-5.2-26.3.4-31.5 12.6s.4 26.3 12.6 31.5c36.1 15.5 75.9 32.5 119.4 51.2-3.9 14.9-6 30.6-6 46.7 0 70 39.1 130.8 96.6 161.9 7.9 4.3 16.9 6.1 25.9 6.1h123c9 0 18-1.8 25.9-6.1 57.5-31.1 96.6-92 96.6-161.9 0-16.2-2.1-31.8-6-46.7 43.5-18.7 83.4-35.7 119.4-51.2 12.2-5.2 17.8-19.3 12.6-31.5s-19.3-17.8-31.5-12.6l-22.5 9.7V224c0-13.3-10.7-24-24-24s-24 10.7-24 24v40.2l-48.2 20.6c-17.9-31.3-44.6-56.8-76.8-73.1M296 416a24 24 0 1 1 48 0 24 24 0 1 1-48 0m24-120a24 24 0 1 1 0 48 24 24 0 1 1 0-48M248 80a24 24 0 1 1 48 0 24 24 0 1 1-48 0m120-24a24 24 0 1 1 0 48 24 24 0 1 1 0-48m-75.8 103.3c-2.7-4.8-4.2-10.2-4.2-15.7 0-17.5 14.2-31.6 31.6-31.6h.8c17.5 0 31.6 14.2 31.6 31.6 0 5.5-1.4 10.9-4.2 15.7L327 195.8c-3.1 5.4-10.8 5.4-13.9 0l-20.9-36.6z"/></svg>
+
+    </a>
+    Jerry's site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mysql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mysql
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Os
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Os
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件基础
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="硬件基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储器的层次结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Cache
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CPU Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-cache_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Cache的数据结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-cache_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Cache读取过程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CPU Cache读取过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cache-dmc" class="md-nav__link">
+    <span class="md-ellipsis">
+      直接映射Cache DMC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      调优
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="调优">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何写出CPU缓存命中率高的代码？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何提升多核CPU缓存命中率？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU缓存一致性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      操作系统结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="操作系统结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      内核
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      虚拟内存
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="虚拟内存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存分段
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存分页
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存分页">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级页表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      段页式内存管理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存分配
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存分配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存分配过程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="缓存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存污染
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux虚拟内存
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux虚拟内存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      内核虚拟内存空间
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内核虚拟内存空间">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      直接映射区
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmalloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      vmalloc区
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      永久映射区 kmap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      固定映射区 fixmap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmap_atomic" class="md-nav__link">
+    <span class="md-ellipsis">
+      临时映射区 kmap_atomic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      物理内存
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="物理内存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      物理内存管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="物理内存管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flatmem" class="md-nav__link">
+    <span class="md-ellipsis">
+      FLATMEM平坦内存模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discontigmem" class="md-nav__link">
+    <span class="md-ellipsis">
+      DISCONTIGMEM非连续内存模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sparsemem" class="md-nav__link">
+    <span class="md-ellipsis">
+      SPARSEMEM稀疏内存模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进程管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户线程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      内核线程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lwp" class="md-nav__link">
+    <span class="md-ellipsis">
+      轻量级进程LWP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      调度算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程通信
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进程通信">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      管道
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息队列
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      共享内存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Socket
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      死锁
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      互斥锁
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      自旋锁
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      乐观锁 悲观锁
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Redis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件基础
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="硬件基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储器的层次结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Cache
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CPU Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-cache_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Cache的数据结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-cache_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Cache读取过程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CPU Cache读取过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cache-dmc" class="md-nav__link">
+    <span class="md-ellipsis">
+      直接映射Cache DMC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      调优
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="调优">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何写出CPU缓存命中率高的代码？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何提升多核CPU缓存命中率？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU缓存一致性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      操作系统结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="操作系统结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      内核
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      虚拟内存
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="虚拟内存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存分段
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存分页
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存分页">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级页表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      段页式内存管理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存分配
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存分配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存分配过程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="缓存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存污染
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux虚拟内存
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux虚拟内存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      内核虚拟内存空间
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内核虚拟内存空间">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      直接映射区
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmalloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      vmalloc区
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      永久映射区 kmap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      固定映射区 fixmap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmap_atomic" class="md-nav__link">
+    <span class="md-ellipsis">
+      临时映射区 kmap_atomic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      物理内存
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="物理内存">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      物理内存管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="物理内存管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flatmem" class="md-nav__link">
+    <span class="md-ellipsis">
+      FLATMEM平坦内存模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discontigmem" class="md-nav__link">
+    <span class="md-ellipsis">
+      DISCONTIGMEM非连续内存模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sparsemem" class="md-nav__link">
+    <span class="md-ellipsis">
+      SPARSEMEM稀疏内存模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进程管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户线程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      内核线程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lwp" class="md-nav__link">
+    <span class="md-ellipsis">
+      轻量级进程LWP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      调度算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程通信
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进程通信">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      管道
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息队列
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      共享内存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Socket
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      死锁
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      互斥锁
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      自旋锁
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      乐观锁 悲观锁
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Os</h1>
+
+<h2 id="_1">硬件基础</h2>
+<h3 id="cpu">CPU</h3>
+<p>常用寄存器：</p>
+<ul>
+<li>通用寄存器：存储需要进行运算的数据</li>
+<li>程序计数器：存储CPU下一条要执行的指令的内存地址</li>
+<li>指令寄存器：存放当前正在被CPU执行的指令</li>
+</ul>
+<p>总线：</p>
+<ul>
+<li>地址总线：指定CPU要操作的内存地址</li>
+<li>数据总线：用于读写内存数据</li>
+<li>控制总线：用于发送和接收信号</li>
+</ul>
+<p>CPU读写内存数据：</p>
+<ul>
+<li>通过地址总线指定内存的地址</li>
+<li>通过控制总线接收读/写命令</li>
+<li>通过数据总线传输数据</li>
+</ul>
+<p>CPU执行程序过程：</p>
+<ol>
+<li>CPU读取程序计数器，控制单元操作地址总线，指定需要访问的内存地址，指令数据通过地址总线传给CPU，CPU收到指令数据后将其存入指令寄存器</li>
+<li>程序计数器的值自增，指向下一条指令。自增的大小由CPU位宽决定，如：32位CPU的指令是4字节，需要四个内存地址存放，此时，程序计数器的值自增4。</li>
+<li>CPU分析指令寄存器中的指令，确定指令的类型和参数：如果是计算类型的指令，就把指令交给逻辑运算单元；如果是存储类型的指令，就把指令交给控制单元执行。</li>
+</ol>
+<p>代码执行过程：</p>
+<ol>
+<li><strong>高级语言</strong> → 编译器处理 → 汇编/机器码。</li>
+<li><strong>机器码</strong> → CPU 逐条执行指令（取指、译码、执行）。</li>
+<li><strong>计算结果</strong> → 存入变量 <code>a</code> 的内存地址。</li>
+</ol>
+<p>a=2+1:</p>
+<ol>
+<li>编译器分析代码，发现1、2是数据，存入数据段</li>
+<li>
+<p>编译器将这行代码翻译成4条指令：</p>
+</li>
+<li>
+<p>将数据段的数据1存入寄存器R0</p>
+</li>
+<li>将数据段数据2存入寄存器R1</li>
+<li>将寄存器R1和R2数据相加，存入R2</li>
+<li>
+<p>将寄存器R2的数据存回数据段下一个地址。</p>
+</li>
+<li>
+<p>编译完成后，具体执行程序的时候，程序计数器会被设置为第一条指令的地址，依次执行四条指令</p>
+</li>
+</ol>
+<h3 id="_2">存储</h3>
+<h4 id="_3">存储器的层次结构</h4>
+<ol>
+<li>寄存器：处理速度最快（0.5个时钟周期）</li>
+<li>CPU Cache：略慢，通常分为L1（2-4个时钟周期）、L2（10-20个时钟周期）、L3（20-60个时钟周期）三层，L1 Cache通常分为数据缓存和指令缓存，读取速度最快，存储空间小。使用SRAM（静态随机存储器）芯片，电路简单，访问速度快</li>
+<li>内存：使用DRAM（动态随机存储器）芯片，功耗低，容量大。（200-300个时钟周期）</li>
+<li>硬盘（SSD/HDD）</li>
+</ol>
+<p><img alt="img" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1753778668867-42874963-59e8-4568-8187-0dcdcd2b8824.png" /></p>
+<p><img alt="img" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1753779283218-6cc11676-0a30-4e89-8f6b-d586a4a95b4d.png" /></p>
+<p>每个存储器只和相邻存储器交换数据</p>
+<h3 id="cpu-cache">CPU Cache</h3>
+<p>L1 Cache通常分为数据缓存和指令缓存，L1 Cache和L2 Cache是每个CPU核心独有的，L3 Cache是多个CPU核心共享的。</p>
+<p><img alt="img" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1753779819270-6081efda-3946-49a8-8cfe-d3bb144702ad.png" /></p>
+<p><img alt="img" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1753779838790-6a0ec5cb-e901-4ae9-bee8-519f50df4280.png" /></p>
+<h4 id="cpu-cache_1">CPU Cache的数据结构</h4>
+<p>CPU Cache由多个Cache Line组成，Cache Line（缓存块）是CPU从内存读取数据的基本单位。Cache Line由有效位valid bit（有效位为0则直接访问内存，重新加载数据）、标志Tag和数据块Data Block组成。</p>
+<h4 id="cpu-cache_2">CPU Cache读取过程</h4>
+<h5 id="cache-dmc">直接映射Cache DMC</h5>
+<p>内存块的地址始终映射在一个CPU Cache Line的地址（对内存地址取模运算实现），这样多个内存块会被映射到同一个CPU Cache Line，为了区分这些不同的内存块，使用<strong>组标记Tag</strong>记录当前CPU Cache Line中存储的数据对应的内存块，从而区分不同的内存。</p>
+<p>CPU在从CPU Cache读取数据的时候，只读取CPU所需要的数据片段，通过偏移量在CPU Cache Line中找到所需的数据。</p>
+<p>一个内存的访问地址包括组标记、CPU Cache Line索引、偏移量三种信息。CPU Cache中的数据结构由索引、有效位、组标记、数据块组成。</p>
+<p>CPU访问内存地址过程：</p>
+<ol>
+<li>根据内存地址中的索引信息计算CPU Cache的索引，找出对应CPU Cache Line的地址</li>
+<li>根据有效位判断数据是否有效，有效则往下执行，否则从内存重载数据</li>
+<li>对比内存地址中的组标记和CPU Cache Line中的组标记，确认CPU Cache Line中的数据是我们要访问的数据，是的话往下执行，否则从内存中重载数据</li>
+<li>根据内存地址中的偏移量，从CPU Cache Line中读取对应的字。</li>
+</ol>
+<h4 id="_4">调优</h4>
+<h5 id="cpu_1">如何写出CPU缓存命中率高的代码？</h5>
+<p>当CPU访问内存数据时，如果数据不在CPU Cache中，则会一次性加载一个CPU Cache Line大小的数据，所以在遍历数组时，按照内存布局顺序访问可有效利用CPU Cache带来的好处。（提升数据缓存命中率）</p>
+<p>减少非连续跳转，利用循环的局部性，优化分支预测，增加连续执行的有效指令数量，提升缓存块的空间利用率（提升指令缓存命中率）</p>
+<h5 id="cpu_2">如何提升多核CPU缓存命中率？</h5>
+<p>因为L1、L2缓存是每个核心独立的，如果一个线程在不同核心之间来回切换，缓存的命中率就会降低，因此，可以把线程固定到某一个CPU核心上。</p>
+<h3 id="cpu_3">CPU缓存一致性</h3>
+<p>CPU写数据方法：</p>
+<ul>
+<li>写直达（Write Through）：数据在Cache中则更新Cache，再写入内存；不在则直接写内存（每次写操作都会写内存，耗时长）</li>
+<li>
+<p>写回（Write Back）：</p>
+</li>
+<li>
+<p>数据在CPU Cache里，更新数据，将Cache Block标记为脏</p>
+</li>
+<li>
+<p>数据对应的Cache Block存放的是别的内存地址的数据的话，检查Cache Block是否为脏：</p>
+</li>
+<li>
+<p>脏，写回内存，读入要写的数据，更新，标记为脏</p>
+</li>
+<li>不脏，从内存读入要写的数据到Cache Block，更新，标记为脏</li>
+</ul>
+<p>CPU缓存一致性：多核心+L1 L2是每个核心独立就会带来缓存一致性问题。</p>
+<p>解决方案：</p>
+<ul>
+<li>写传播：某个CPU核心里的Cache数据更新时，必须传播到其他核心Cache（总线嗅探）</li>
+<li>事务串行化：某个CPU核心里对数据的操作顺序必须在其他核心看来顺序是一样的（MESI协议）</li>
+</ul>
+<p>总线嗅探：CPU核心监听总线，有更新时广播事件，检查是否有想用数据在自己的L1 Cache，有则更新</p>
+<p>MESI协议：</p>
+<h2 id="_5">操作系统结构</h2>
+<h3 id="_6">内核</h3>
+<p>连接应用程序和硬件。一般提供四个基本功能：</p>
+<ul>
+<li>管理进程、线程，决定哪个进程、线程使用CPU（进程调度）</li>
+<li>管理内存，决定内存的分配和回收（内存管理）</li>
+<li>管理硬件设备，为进程与硬件设备之间提供通信能力（硬件通信）</li>
+<li>提供系统调用，它是用户程序与操作系统之间的接口</li>
+</ul>
+<p>内核具有很高的权限，可以控制cpu、内存、硬盘等硬件，而应用程序具有的权限很小。内核一般分为两个区域：</p>
+<ul>
+<li>内核空间，这个内存空间只有内核程序可以访问</li>
+<li>用户空间，这个内存空间专门给应用程序使用</li>
+</ul>
+<p>用户空间的代码只能访问局部内存空间，内核空间的代码可以访问所有内存空间。</p>
+<p>当程序使用系统调用时，会产生一个中断。发生中断后，CPU会中断当前在执行的用户程序，跳转到中断处理程序。内核处理完后，主动触发中断，把CPU执行权限交给用户程序，回到用户态继续工作。</p>
+<p>Linux内核设计的理念：</p>
+<ul>
+<li>MultiTask 多任务：有多个任务同时执行（并发/并行）</li>
+<li>SMP 对称多处理：每个CPU的地位是相等的，对资源的使用权限也是相通的，多个CPU共享同一个内存，每个CPU都可以访问完整的内存和硬件资源。</li>
+<li>ELF 可执行文件链接格式：可执行文件的存储格式。</li>
+<li>Monolithic Kernel 宏内核：完整的可执行程序，拥有最高权限。</li>
+</ul>
+<p>宏内核的特征是系统内核的所有模块都运行在内核态。（linux）</p>
+<p>微内核架构的内核只保留最基本的能力，比如进程调度、虚拟机内存、中断等，把一些应用放到用户空间，比如驱动程序、文件系统等。这样服务与服务是隔离的，单个服务出现故障或者完全攻击，也不会导致整个操作系统挂掉，提高了系统的稳定性和可靠性。（鸿蒙）</p>
+<p>还有一种内核叫混合型内核，内核里面有一个最小版本的内核，然后其他模块在这个基础上搭建，实现的时候会跟宏内核类似，把整个内核做成一个完整的程序。（Windows NT）</p>
+<h2 id="_7">内存管理</h2>
+<h3 id="_8">虚拟内存</h3>
+<p>进程持有的虚拟地址会通过CPU中的内存管理单元MMU的映射关系，来转换成物理地址，再通过物理地址访问内存。</p>
+<h4 id="_9">内存分段</h4>
+<p>程序是由若干逻辑分段组成的，不同的段有不同的属性，所以用分段的形式把这些段分离出来。分段机制下的虚拟地址由两部分组成：段选择因子和段内偏移量。</p>
+<ul>
+<li>段选择因子就保存在段寄存器里，段璇子因子里面最重要的是段号，用作段表的索引，段表里面保存的是这个段的基地址、段的界限和特权等级</li>
+<li>虚拟地址中的段内偏移量应该位于0和段界限之间，如果段内偏移量是合法的，就将段基地址加上段内偏移量得到物理内存地址。</li>
+</ul>
+<p>分段解决了程序本身不需要关心具体物理内存地址的问题，但是也有不足：</p>
+<ul>
+<li>内存碎片问题</li>
+<li>内存交换的效率低</li>
+</ul>
+<p>内存碎片分为内部碎片和外部碎片。内存分段管理可以做到根据实习需求分配内存，所以不会出现内部碎片，但是由于每个段的长度不固定，所以多个段未必能恰好使用所有内存空间，会产生多个不连续的小物理内存，导致新的程序无法被装载，所以会出现外部碎片。</p>
+<p>解决外部内存碎片的问题就是内存交换。内存交换空间在Linux里就是Swap空间，是从硬盘划分出来的，用于内存和硬盘的空间交换。</p>
+<p>分段的方式很容易产生外部碎片，因此不得不Swap内存区域，就会产生性能瓶颈。</p>
+<h4 id="_10">内存分页</h4>
+<p>分页就是把整个虚拟和物理内存空间切成一段段固定尺寸的大小。每页4KB。页表是存储在内存里的。当进程访问的虚拟地址在页表中查不到时，系统会产生一个缺页异常，进入系统内核空间分配物理内存、更新进程页表，最后返回用户空间，恢复进程的运行。</p>
+<p>因为内存分页机制分配内存的最小单位是页，所以会出现页内浪费，会有内部碎片。</p>
+<p>分页的方式使得我们在加载程序的时候，不再需要一次性都把程序加载到物理内存，只有在程序运行中，需要用到对应虚拟内存页面里的指令和数据时，再加载到物理内存里去。</p>
+<h5 id="_11">多级页表</h5>
+<p>如果某个一级页表的页表项没有被用到，也就不需要创建这个页表项对应的二级页表了，在需要时才创建二级页表。页表一定要覆盖全部虚拟地址空间，不分级的页表就需要有100多万个页表项来映射，二级页表只需要1024个页表项。</p>
+<p>TLB在CPU芯片中，常称为页表缓存、快表，有了TLB，CPU在寻址时会先查TLB。</p>
+<h4 id="_12">段页式内存管理</h4>
+<ul>
+<li>先将程序划分为多个有逻辑意义的段</li>
+<li>再把每个段划分为多个页</li>
+</ul>
+<p>地质结构由段号、页号、页内偏移组成。</p>
+<p>逻辑地址：程序所用的地址，通常是没被段式内存管理映射的地址。</p>
+<p>线性地址/虚拟地址：通过段式内存管理映射的地址。</p>
+<p>Linux内存主要采用的是页式内存管理，同时也涉及了段机制。</p>
+<p>Linux系统中的每个段都是从0地址开始的整个4GB虚拟空间，也就是所有的段的起始地址都是一样的。这种做法屏蔽了处理器中的逻辑地址概念，段只被用于访问控制和内存保护。</p>
+<p>在Linux中，虚拟地址空间又被划分为内核空间和用户空间。</p>
+<p>每个进程都有独立的虚拟内存，但是每个虚拟内存中的内核地址其实关联的是相同的物理内存。</p>
+<p>用户内存空间从低到高分别是6种不同的内存段：</p>
+<ul>
+<li>代码段，二进制可执行代码</li>
+<li>数据段，已初始化的静态常量和全局变量</li>
+<li>BSS段，未初始化的静态变量和全局变量</li>
+<li>堆段，malloc动态分配的内存，从低地址开始向上增长</li>
+<li>文件映射段，动态库、共享内存等，从低地址开始向上增长（mmap）</li>
+<li>栈段，局部变量和函数调用的上下文。栈的大小是固定的，一般是8MB</li>
+</ul>
+<h3 id="_13">内存分配</h3>
+<p>malloc是C的库函数，用于动态分配内存。</p>
+<p>malloc申请内存的时候，会有两种方式向操作系统申请内存：</p>
+<ul>
+<li>通过brk()系统调用从堆分配内存：将堆顶指针向高地址移动，获得新的内存空间。</li>
+<li>通过mmap()系统调用在文件映射区分配内存：通过mmap()系统调用中私有匿名映射的方式，在文件映射区分配一块内存，也就是从文件映射区偷一块内存。</li>
+</ul>
+<p>如果用户分配的内存小于128KB，通过brk()申请内存；如果分配的内存大于128KB则通过mmap()申请内存。malloc()分配的是虚拟内存。如果分配后的虚拟内存没有被访问的话，虚拟内存是不会映射到物理内存的，这样就不会占用物理内存。只有在访问一分配的虚拟地址空间的时候，操作系统通过查找页表，发现虚拟内存对应的页没有在物理内存中，才会触发缺页中断，然后操作系统会建立虚拟内存和物理内存的映射关系。</p>
+<p>free释放内存后，如果是通过brk申请的，会放回malloc内存池，如果是通过mmap申请的，会归还操作系统。</p>
+<p>不全部用 mmap 的核心原因是：</p>
+<ol>
+<li>系统调用和内核管理开销大</li>
+<li>容易造成地址空间碎片</li>
+<li>无法像 malloc 那样在用户态做内存池优化</li>
+<li>历史兼容性和内核限制</li>
+</ol>
+<p>为什么不全部用 brk？</p>
+<ul>
+<li>brk 需要连续地址空间，容易碎片化。</li>
+<li>brk 只能调整堆顶，无法高效回收内存（只能顺序回收）。</li>
+<li>不适合大块内存，释放后可能浪费。</li>
+<li>不支持文件映射，灵活性差（一个进程只有一条brk堆，mmap可以在地址空间中创建很多独立区域）。</li>
+</ul>
+<p><strong>malloc 的实现 = 系统调用 (brk/mmap) + 用户态内存池管理</strong></p>
+<ul>
+<li><strong>小块内存</strong> → brk + arena + bin 管理（fastbin/smallbin）</li>
+<li><strong>大块内存</strong> → mmap 独立分配，释放立即归还</li>
+<li><strong>free</strong> → 回收空闲块，尝试合并，或 munmap</li>
+</ul>
+<p>虚拟内存的作用：</p>
+<ul>
+<li>可以使得进程对运行内存超过物理内存大小</li>
+<li>由于每个进程都有自己的页表，所以每个进程的虚拟内存空间就是相互独立的。进程没有办法访问其他进程的页表，解决了多进程间地址冲突的问题。</li>
+<li>页表项除了物理地址之外还有一些标记属性的比特，比如控制一个页的读写权限，标记该页是否存在。在内存访问方面提供了更好的安全性。</li>
+</ul>
+<h4 id="_14">内存分配过程</h4>
+<p>当应用程序读写了这块虚拟内存，CPU就会去访问这个虚拟内存，这时会发现这个虚拟内存没有映射到物理内存，CPU就会产生缺页中断，进程就会从用户态切换到内核态，将缺页中断交给内核的缺页中断函数处理。</p>
+<p>缺页中断处理函数会看是否有空闲的物理内存，如果有，就直接分配物理内存，建立虚拟内存和物理内存之间的映射。如果没有空闲的物理内存，内核就会开始回收内存：</p>
+<ul>
+<li>直接内存回收：如果后台异步回收跟不上进程内存申请的速度，就会开始直接回收，这个过程是同步的，会阻塞进程的执行。如果直接回收内存后，空闲的物理内存仍然无法满足此次物理内存的申请速度，会触发OOM机制。</li>
+<li>后台内存回收：物理内存紧张的时候会唤醒kswapd内核线程来回收内存，这个过程是异步的。</li>
+</ul>
+<p>有两类内存可以被回收：</p>
+<ul>
+<li>文件页：内核缓存的磁盘数据和内核缓存的文件数据都叫文件页。回收干净页的方式是先写回磁盘再释放内存。</li>
+<li>匿名页：这部分内存没有实际载体，这部分内存很可能还有再次访问，所以不能直接释放，它们是通过Linux的Swap机制，把不常访问的内存写到磁盘中，然后释放内存。再次访问时，从磁盘读入内存。</li>
+</ul>
+<p>文件页和匿名页的回收都是基于LRU算法。LRU回收算法实际上维护着active和inactive两个双向链表：</p>
+<ul>
+<li>active_list活跃内存页链表存放的是最近被访问过的内存页</li>
+<li>inactive_list不活跃内存页链表存放的是很少被访问的内存页</li>
+</ul>
+<p>可被回收的内存类型有文件页和匿名页：</p>
+<ul>
+<li>文件页的回收：对于干净页是直接释放内存，不会影响性能，对于脏页会先写回到磁盘再释放内存，这个过程有磁盘IO，会影响系统性能</li>
+<li>匿名页的回收：如果开启了Swap机制，那么Swap机制会将不常访问的匿名页换出到磁盘，下次访问再从磁盘换入内存，这个过程会影响系统性能。</li>
+</ul>
+<p>剩余内存在页低阈值和页最小阈值之间会触发kswapd，回收至大于高阈值为止。如果剩余内存小于页最小阈值，就会触发直接内存回收，这时应用程序会被阻塞。</p>
+<p><img alt="img" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756744167595-505a6b97-c333-47e8-8c41-491447d79a46.png" /></p>
+<p>SMP架构指的是一种多个CPU共享资源的硬件架构（UMA），随着CPU的核数增多，多个CPU通过一个总线访问内存，总线的带宽压力会越来越大，这时候就有了NUMA。</p>
+<p>要保护进程不被 OOM 杀掉，常用方法有：</p>
+<ol>
+<li><strong>oom_score_adj=-1000</strong>（最直接有效）</li>
+<li>用 <strong>cgroup / systemd</strong> 限制其他进程内存</li>
+<li>调整 <strong>overcommit 策略</strong>，避免系统过度承诺内存</li>
+<li>关键进程可 <strong>预分配或锁定内存</strong></li>
+</ol>
+<h3 id="_15">缓存</h3>
+<p>Linux实现了两个LRU链表：活跃LRU链表和非活跃LRU链表，将数据分为了冷数据和热数据，然后分别进行LRU算法。预读页只需要加入到inactive list区域的头部，当页真正被访问时，才插入active_list的头部</p>
+<h4 id="_16">缓存污染</h4>
+<p>批量读如一次性数据，这些数据都被加到活跃LRU链表，之前缓存在活跃LRU链表的热点数据全都被淘汰，整个活跃LRU链表被污染。对后续其他数据访问会造成大量磁盘IO。</p>
+<p>提高进入活跃LRU链表的门槛，保证活跃LRU链表的数据不会被轻易替换掉。Linux在内存页第二次访问的时候才将页从inactive升级到active list</p>
+<h3 id="linux">Linux虚拟内存</h3>
+<p>虚拟地址就是给程序的“假象地址”，它隔离进程、简化编程，并由操作系统和硬件负责映射到真实物理内存，从而实现安全、高效、灵活的内存管理。引入虚拟内存后每个进程有自己独立的虚拟地址空间，进程间相互隔离。</p>
+<p>进程在内核中的描述符是task_struct，在task_struct中，有一个专门描述进程虚拟地址空间的内存描述符mm_struct。每个进程都有唯一的mm_struct结构体，当我们调用fork函数创建进程的时候，表示进程地址空间的mm_struct结构会随着进程描述符task_struct的创建而创建。</p>
+<p>子进程在新创建出来之后它的虚拟内存空间和父进程的虚拟内存空间是一样的。通过fork函数创建出的子进程，它的虚拟内存空间以及相关页表相当于父进程虚拟内存空间的一份拷贝，直接从父进程中拷贝到子进程中。当通过vfork或者clone系统调用创建出的子进程，父进程和子进程的虚拟内存空间是共享的。</p>
+<p>是否共享地址几乎是进程和线程之间的本质区别，Linux内核并不区别对待它们，线程对于内核来说仅仅是一个共享特定资源的进程而已。</p>
+<p>内核线程和用户态线程的区别是内核线程没有相关的内存描述符mm_struct，内核线程对应的task_struct结构体中的mm指向Null，所以内核线程之间调度是不涉及地址空间切换的。</p>
+<ul>
+<li><strong>父子进程</strong>：各自拥有不同的 <code>mm_struct</code>（即不同地址空间）。</li>
+<li><strong>进程和线程</strong>：线程共享同一 <code>mm_struct</code>，进程则不共享。</li>
+<li><strong>内核线程和用户态线程</strong>：内核线程没有 <code>mm_struct</code>，用户态线程有。</li>
+</ul>
+<h4 id="_17">内核虚拟内存空间</h4>
+<h5 id="_18">直接映射区</h5>
+<p>映射物理内存，主要存放内核数据、页缓存、物理页。分为ZONE_DMA、ZONE_NORMAL</p>
+<h5 id="vmalloc">vmalloc区</h5>
+<p>采用动态映射的方式映射物理内存中的高端内存。使用vamlloc进行内存分配。非连续物理内存映射，适合需要大块虚拟内存但物理上不连续的情况。</p>
+<h5 id="kmap">永久映射区 kmap</h5>
+<p>这段虚拟地址空间中允许建立与物理高端内存的长期映射关系。</p>
+<h5 id="fixmap">固定映射区 fixmap</h5>
+<p>固定映射区的虚拟地址可以自由映射到物理内存的高端地址上，但是虚拟地址是固定的，被映射的物理地址是可变的。</p>
+<h5 id="kmap_atomic">临时映射区 kmap_atomic</h5>
+<p><strong>提供一个临时的虚拟地址</strong>，让内核可以访问高端物理内存页</p>
+<h3 id="_19">物理内存</h3>
+<p>内存也叫随机访问存储器RAM：</p>
+<ul>
+<li>静态RAM SRAM，用于CPU高速缓存LCache、L2Cache、L3Cache，访问速度快，容量小</li>
+<li>动态RAM DRAM，主存，访问速度慢，容量大</li>
+</ul>
+<p>多个存储器模块连接到存储控制器上就聚合成了主存。DRAM芯片就包装在存储器模块，每个存储器模块中包含8个DRAM芯片。每个DRAM芯片的存储结构是一个二维矩阵，存储的元素称为超单元supercell，每个supercell大小为一字节。</p>
+<p>CPU和内存之间的数据交互是通过总线完成的，数据在总线上的传送是通过一系列步骤完成的，这些步骤称为总线事务。数据从内存传送到CPU称为读事务，数据从CPU传送到内存称为写事务。</p>
+<p>总线上传输的信号包括：地址信号、数据信号、控制信号。</p>
+<p>CPU每次会向内存读写一个cache line大小的数据（64字节），内存一次只能吞吐8个字节。</p>
+<p>CPU从内存读取数据的过程：</p>
+<ol>
+<li>CPU将物理内存地址A放到系统总线上，IO bridge将信号传递到存储总线上</li>
+<li>主存收到信号通过存储控制器将存储总线上的物理内存地址A读取出来</li>
+<li>存储控制器通过物理内存地址A定位到具体的存储器模块，从DRAM芯片中取出物理内存地址A对应的数据X</li>
+<li>存储控制器将读取到的数据X放到存储总线上，IO bridge将存储总线上的数据信号转换为系统总线上的数据信号，然后沿着系统总线传递</li>
+<li>CPU芯片感受到系统总线上的数据信号，将数据从系统总线上读取出来并拷贝到寄存器</li>
+</ol>
+<p>CPU向内存写入数据过程：</p>
+<ol>
+<li>CPU将要写入的物理内存地址A放入系统总线</li>
+<li>通过IO bridge的信号转换，将物理内存地址A传递到存储总线上</li>
+<li>存储控制器感受到存储总线上的地址信号，将物理内存地址A从存储总线上读取出来，等待数据的到达</li>
+<li>CPU将寄存器中的数据拷贝到系统总线上，通过IO bridge信号转换，将数据传递到存储总线上</li>
+<li>存储控制器感受到存储总线上的数据信号，将数据从存储总线上读取出来</li>
+<li>存储控制器通过内存地址A定位到具体的存储器模块，最后将数据写入存储器模块中的8个DRAM芯片</li>
+</ol>
+<h4 id="_20">物理内存管理</h4>
+<p>为了快速索引到具体的物理内存页，内核为每个物理页struct page结构体定义了一个索引编号：PFN，PFN和struct page是一一对应的。</p>
+<p>内核提供了两个宏来完成PFN与物理页结构体struct page之间的相互转换：page_to_pfn和pfn_to_page。</p>
+<h5 id="flatmem">FLATMEM平坦内存模型</h5>
+<p>struct page和物理内存页一一对应。只适合管理一整块连续的物理内存，对于多块非连续的物理内存来说会造成很大的内存空间浪费。因为用于组织物理页的底层数据结构是mem_map数组，数组要求物理页是连续的，所以只能为不连续的部分（内存地址空洞）也分配struct page来填充，如果存在大量的地址空洞，那么其对应的struct page将会占用大量的内存空间，导致巨大的浪费。</p>
+<h5 id="discontigmem">DISCONTIGMEM非连续内存模型</h5>
+<p>内核将物理内存从宏观上划分成了一个一个的节点，每个node节点管理一块连续的物理内存。（类似链表+数组）</p>
+<h5 id="sparsemem">SPARSEMEM稀疏内存模型</h5>
+<p>随着内存技术的发展，内核可以支持物理内存的热插拔了，这样一来物理内存的不连续成为常态。SPARSEMEM的核心思想是对粒度更小的连续内存块进行精细的管理，用于管理连续内存块的单元被称作section。（类似数组+数组）</p>
+<p>我认为sparsemem和discontigmem很类似，只不过管理粒度更小了，在sparsemem中，管理粒度来到了每一个连续块section，而不是全局范围，但是两者在组织形式上分别是数组+数组/链表+数组。</p>
+<h2 id="_21">进程管理</h2>
+<p>挂起状态：进程没有占用实际物理内存空间的情况。分为阻塞挂起（在外存等待某个事件的出现）和就绪挂起（在外存，但只要进入内存，即刻允许）。</p>
+<p>PCB是进程存在的唯一标识。</p>
+<p>PCB包含：</p>
+<ul>
+<li>
+<p>进程描述信息</p>
+</li>
+<li>
+<p>进程标识符</p>
+</li>
+<li>
+<p>用户标识符</p>
+</li>
+<li>
+<p>进程控制和管理信息</p>
+</li>
+<li>
+<p>进程当前状态</p>
+</li>
+<li>
+<p>进程优先级</p>
+</li>
+<li>
+<p>资源分配清单</p>
+</li>
+<li>CPU相关信息</li>
+</ul>
+<p>PCB通常通过链表的方式组织，把具有相同状态的进程链在一起，组成各种队列。（就绪队列、阻塞队列）</p>
+<p>创建进程过程：</p>
+<ul>
+<li>申请空白PCB，填入控制和管理进程的信息</li>
+<li>分配运行时所必需的资源</li>
+<li>将PCB插入就绪队列等待调度</li>
+</ul>
+<p>终止进程过程：（正常结束、异常结束、外界干预 kill）</p>
+<ul>
+<li>查找需要终止的进程PCB</li>
+<li>如果处于执行状态，终止执行，将CPU分配给其他进程</li>
+<li>如果还有子进程，将子进程交给1号进程接管</li>
+<li>将进程所有资源归还系统</li>
+<li>PCB从所在队列删除</li>
+</ul>
+<p>阻塞进程过程：</p>
+<ul>
+<li>找到PCB</li>
+<li>如果是运行状态，保护现场，状态转为阻塞态，停止运行</li>
+<li>PCB插入到阻塞队列</li>
+</ul>
+<p>唤醒进程过程：</p>
+<ul>
+<li>从阻塞队列找到PCB</li>
+<li>从阻塞队列移出，设置为就绪状态</li>
+<li>将PCB插入就绪队列</li>
+</ul>
+<p>CPU寄存器和程序计数器是CPU在运行任何任务前必须依赖的环境，叫做CPU上下文。</p>
+<p>CPU上下文切换可分为：进程上下文切换、线程上下文切换、中断上下文切换。</p>
+<p>进程是由内核管理和调度的，进程的切换只能发生在内核态。进程的上下文切换不仅包含了虚拟内存、栈、全局变量等用户空间的资源，还包含内核堆栈、寄存器等内核空间资源。</p>
+<p>线程的优点：</p>
+<ul>
+<li>一个进程可以同时存在多个线程</li>
+<li>线程之间可以并发执行</li>
+<li>线程之间共享地址空间和文件资源</li>
+</ul>
+<p>线程缺点：</p>
+<ul>
+<li>当进程中的一个线程崩溃了会导致所属进程的所有线程崩溃。（针对C/C++）</li>
+</ul>
+<p>线程与进程的最大区别在于：线程是调度的基本单位，进程是资源分配的基本单位。当两个进程属于同一个进程，上下文切换时，只需要切换线程的私有数据、寄存器等不共享数据。</p>
+<p>线程分为用户线程、内核线程和轻量级线程。</p>
+<h3 id="_22">用户线程</h3>
+<p>用户线程的整个线程调度和管理操作系统是看不见的，由用户级线程库函数来完成，包括线程的创建、终止、同步和调度等。</p>
+<p>优点：可用于不支持线程技术的操作系统；用户线程的切换无需用户态和内核态的切换，速度快。</p>
+<p>缺点：</p>
+<ul>
+<li>如果一个线程阻塞，进程所包含的所有线程都不能执行</li>
+<li>用户态线程没法打断当前运行中的线程</li>
+<li>时间片分配给进程，多线程执行时，每个线程得到的时间片少，执行慢</li>
+</ul>
+<h3 id="_23">内核线程</h3>
+<p>优点：一个内核线程阻塞不会影响其他内核线程的运行；分配给线程，多线程的进程获得更多CPU时间</p>
+<p>缺点：内核维护进程和线程的上下文信息；线程的创建、终止、切换都是通过系统调用进行，系统开销大</p>
+<h3 id="lwp">轻量级进程LWP</h3>
+<p>轻量级进程是内核支持的用户线程，一个进程可有一个或多个LWP，每个LWP是跟内核线程一对一映射的。</p>
+<h3 id="_24">调度算法</h3>
+<p>FCFS先来先服务</p>
+<p>SJF短作业优先</p>
+<p>HRRN高响应比优先：优先权=（等待时间+要求服务时间）/要求服务时间</p>
+<p>RR时间片轮转调度算法</p>
+<p>HPF最高优先级调度算法</p>
+<p>MFQ多级反馈队列调度算法：优先级越高时间片越短，每个优先级下先来先服务，没运行完降优先级入队</p>
+<h3 id="_25">进程通信</h3>
+<h4 id="_26">管道</h4>
+<p>分为匿名管道（｜）和命名管道（FIFO）。管道就是内核里面的一串缓存。在shell里通过｜匿名管道将多个命令连接在一起，实际上就是创建了多个子进程。对于匿名管道，它的通信范围是存在父子进程关系的进程。对于命名管道，它可以在不相关的进程间通信。</p>
+<h4 id="_27">消息队列</h4>
+<p>消息队列是保存在内核中的消息链表。消息队列的生命周期随内核。消息队列不适合比较大的数据传输。消息队列通信过程中，存在用户态和内核态之间的数据拷贝开销。</p>
+<h4 id="_28">共享内存</h4>
+<p>共享内存的机制就是拿出一块虚拟地址空间来，映射到相同的物理内存。</p>
+<h4 id="_29">信号量</h4>
+<p>信号量其实是一个整型的计数器，主要用于实现进程间的互斥和同步，而不是用于缓存进程间通信的数据。</p>
+<h4 id="_30">信号</h4>
+<p>对于异常情况下的工作模式，需要用信号的方式来通知进程。</p>
+<p>常见信号：</p>
+<ul>
+<li>1 SIGHUP 挂起，常见于守护进程</li>
+<li>2 SIGINT 终止进程 ctrl+c</li>
+<li>3 SIGQUIT 进程终止并产生core dump（调试用）</li>
+<li>9 SIGKILL 强制终止，不可被进程捕获和忽略</li>
+<li>11 SIGSEGV 段错误（Segmentation Fault），非法内存访问时内核发送的信号。</li>
+<li>15 SIGREM 终止，默认的kill信号，进程可以做清理工作后退出</li>
+<li>18 SIGCONT 继续，让被暂停的进程恢复运行</li>
+<li>19 SIGSTOP 停止，暂停进程，不可被捕获和忽略 </li>
+<li>20 SIGTSTP 终端停止，可以被捕获并处理，ctrl+z</li>
+<li>17 SIGCHLD 子进程状态改变时发给父进程，父进程可用wait回收子进程</li>
+</ul>
+<h4 id="socket">Socket</h4>
+<p>Socket不仅可以跨网络与不同主机通信，还可以在同主机上进程间通信。</p>
+<p>针对TCP协议通信的socket模型：</p>
+<ul>
+<li>服务端和客户端初始化socket，得到文件描述符</li>
+<li>服务端调用bind，绑定IP和端口</li>
+<li>服务端调用listen监听</li>
+<li>服务端调用accept等待客户端连接</li>
+<li>客户端调用connect发起连接请求</li>
+<li>服务端accept返回用于传输的socket文件描述符</li>
+<li>客户端调用write写入数据；服务端调用read读取数据</li>
+<li>客户端调用close断开连接，服务端read数据的时候读到EOF等待数据处理完后调用close</li>
+</ul>
+<p>针对UDP协议通信的socket模型：</p>
+<ul>
+<li>初始化socket</li>
+<li>调用bind绑定ip port</li>
+<li>调用sendto和recvfrom进行通信</li>
+</ul>
+<p>针对本地进程间通信的socket模型：</p>
+<p><img alt="img" src="https://cdn.nlark.com/yuque/0/2025/png/45083345/1756825097439-42245e05-5d3e-4ebf-a09f-6e874da4103f.png" /></p>
+<p>哲学家就餐：</p>
+<ul>
+<li>每次只能一个哲学家开始就餐</li>
+<li>奇数偶数拿叉子顺序相反</li>
+<li>两边没进餐才可以进餐</li>
+</ul>
+<h3 id="_31">死锁</h3>
+<p>死锁四个条件：互斥、持有并等待、不可剥夺、循环等待</p>
+<p>可以使用pstack+gdb定位死锁问题。pstack可以显示每个线程的栈跟踪信息，通过观察函数调用，定位死锁</p>
+<p>避免死锁最常用的方法是使用资源有序分配法来破环循环等待。</p>
+<h3 id="_32">互斥锁</h3>
+<p>互斥锁加锁失败有两次上下文切换：运行-睡眠（加锁失败）、睡眠-就绪（锁释放）</p>
+<h3 id="_33">自旋锁</h3>
+<p>通过CPU提供的CAS函数（Compare And Swap）在用户态完成加锁和解锁。自旋锁一直自旋，直到锁可用。在单核CPU上，需要抢占式的调度器，因为自旋的线程永远不会放弃CPU。</p>
+<h3 id="_34">乐观锁 悲观锁</h3>
+<p>悲观锁在访问共享资源前先上锁。乐观锁先修改完共享资源，再验证这段时间内有没有冲突发生，如果没有，操作完成，如果有，放弃本次操作。</p>
+<p>文件非法访问：</p>
+<ul>
+<li>只读内存写入</li>
+<li>访问没有权限的地址</li>
+<li>访问不存在的内存</li>
+</ul>
+<p>线程崩溃后一般通过SIGSEGV信号，使得进程崩溃。</p>
+<p>如果进程没有注册自己的信号处理函数，系统会执行默认的信号处理程序；如果注册了，则会执行自己的信号处理函数。</p>
+<p>为什么线程崩溃不会导致JVM线程崩溃</p>
+<p>因为JVM自定义了自己的信号处理函数，拦截了SIGSEGV信号。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../mysql/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mysql">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Mysql
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../redis/" class="md-footer__link md-footer__link--next" aria-label="Next: Redis">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Redis
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+      
+    
+    
+    
+      
+      
+    
+    <a href="https://fosstodon.org/@squidfunk" target="_blank" rel="noopener me" title="fosstodon.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
